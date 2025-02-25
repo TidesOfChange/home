@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout>
+  <article class="max-w-3xl mx-auto p-8 text-white">
+    <!-- Main Title -->
+    <h1 class="text-4xl font-bold mb-6">Character Leveling</h1>
+
+    <!-- Subheading -->
+    <h2 class="text-2xl font-semibold mb-2">Earning Experience</h2>
+    <p class="mb-4">
+      GMs will decide how much XP characters earn after each session based on what the characters accomplish. Ideally, characters should be able to gain at least some XP almost every session (at least at the beginning, while costs are low), but should not be able to do too much leveling between sessions. A threshold of 10–20XP might make sense based on the types of encounters players have in a session.
+    </p>
+    <p class="mb-4">
+      Increasing skills and attributes should not happen arbitrarily. They should reflect the experiences the character has. If you want a rank 2 in Strength, but don't do anything in game play that could feasibly improve that strength score, it shouldn't be leveled up. Conversely, if you're doing a lot of hacking, you're probably getting better at it, and you might choose to level up your cybernetics skill over time.
+    </p>
+    <p class="mb-8">
+      No single thing from the session itself may be leveled up more than once per session and must be done by the end of the session.
+    </p>
+
+    <!-- Another Subheading -->
+    <h2 class="text-2xl font-semibold mb-2">Allocating Experience</h2>
+    <p class="mb-4">
+      Once players start gaining XP for characters, they can invest it in specific stats or abilities:
+    </p>
+    <ul class="list-disc list-inside mb-4 space-y-2">
+      <li>
+        <strong>Health Points:</strong> For example, every 5 XP might grant +2 rank in Health Hit Points. To increase hit points, players can spend 5 XP to add +2 to their maximum HP. If you’re using a system where 1 rank = 3HP, each additional rank can cost 5 XP.
+      </li>
+      <li>
+        <strong>Skills:</strong> If your system allows you to invest XP directly into skill ranks (like hacking, stealth, or cybernetics), you can require a certain amount of XP per rank. 
+      </li>
+      <li>
+        <strong>Expertise:</strong> Some GMs may allow players to buy special feats or perks with XP. For example, a perk might allow the character to learn a new weapon type or gain a new ability that modifies gameplay.
+      </li>
+    </ul>
+    <p class="mb-4">
+      In all cases, you should tie XP spending to in-game activities that justify the improvement.
+    </p>
+  </article>
+</BaseLayout>

@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout>
+  <section class="min-h-screen flex flex-col items-center justify-center"
+  style="background-image: url('/images/felt.jpg');"
+  >
+    
+    <h1 class="text-3xl font-bold mb-8">Dice Roller</h1>
+    
+    <!-- Roll Buttons -->
+    <div class="mb-4">
+      <button id="roll-d20" class="px-4 py-2 bg-black text-white rounded hover:bg-green-500 mr-4">
+        Roll D20
+      </button>
+      <button id="roll-d6" class="px-4 py-2 bg-black text-white rounded hover:bg-green-500">
+        Roll D6
+      </button>
+    </div>
+    
+    <!-- GIF Containers -->
+    <!-- D20 GIF -->
+    <img
+      id="dice-gif-d20"
+      src="/images/20_dice.gif"
+      alt="D20 rolling animation"
+      class="w-100 h-100 hidden"
+    />
+    <!-- D6 GIF -->
+    <img
+      id="dice-gif-d6"
+      src="/images/6-dice.gif"
+      alt="D6 rolling animation"
+      class="w-200 h-200 hidden"
+    />
+    
+    <!-- Final Result Text -->
+    <p id="result" class="text-2xl font-semibold mt-4"></p>
+  </section>
+
+  <script>
+    const d20Button = document.getElementById('roll-d20');
+    const d6Button = document.getElementById('roll-d6');
+    const d20Gif = document.getElementById('dice-gif-d20');
+    const d6Gif = document.getElementById('dice-gif-d6');
+    const resultEl = document.getElementById('result');
+
+    // Helper function to "reset" both GIFs (hide them) & clear result
+    function resetDice() {
+      d20Gif.classList.add('hidden');
+      d6Gif.classList.add('hidden');
+      resultEl.textContent = '';
+    }
+
+    // Common rolling logic with a given sides (6 or 20), and a given GIF
+    function rollDice(sides, gifElement, duration = 1500) {
+      resetDice();
+      // Force the GIF to reload from the start by appending a cacheBust query
+      gifElement.src = gifElement.src.split('?')[0] + '?cacheBust=' + Date.now();
+      // Show the GIF
+      gifElement.classList.remove('hidden');
+      
+      // Simulate rolling
+      const finalRoll = Math.floor(Math.random() * sides) + 1;
+      resultEl.textContent = `Rolling...`;
+
+      // Hide GIF after 'duration' ms, then show final result
+      setTimeout(() => {
+        gifElement.classList.add('hidden');
+        resultEl.textContent = `You rolled a D${sides}: ${finalRoll}`;
+      }, duration);
+    }
+
+    // D20 button handler
+    d20Button.addEventListener('click', () => {
+      rollDice(20, d20Gif);
+    });
+
+    // D6 button handler
+    d6Button.addEventListener('click', () => {
+      rollDice(6, d6Gif);
+    });
+  </script>
+</BaseLayout>
