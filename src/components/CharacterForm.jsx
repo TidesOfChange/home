@@ -296,7 +296,7 @@ const CharacterForm = () => {
         ) : (
           <button
             onClick={() => {
-              window.location.href = "/"; // Redirects to the homepage
+              window.location.href = "/play";
             }}
             className="cursor-pointer px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-700"
           >
