@@ -1,5 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
+const { url } = Astro;
+const isPlayPage = url.pathname === "/play_interface";
 ---
 
 
@@ -30,7 +32,10 @@ import Footer from '../components/Footer.astro';
       <!-- RIGHT SIDE: Optional nav links -->
       <nav>
         <ul class="flex space-x-4">
-          <li><a href="/dice-roll" class="hover:text-gray-300">Dice Roll</a></li>
+          {isPlayPage && (
+            <li><a href="/char_form" class="px-4 py-2 bg-yellow-500 text-black rounded hover:bg-yellow-700">Character Creation</a></li>
+            <li><a href="/dice-roll" class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900">Dice Roll</a></li>
+          )}
           <li><a href="/contact" class="hover:text-gray-300">Contact</a></li>
         </ul>
       </nav>
@@ -234,10 +239,6 @@ import Footer from '../components/Footer.astro';
         <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Sylvangrove - Session 3: Mycelian</a>
       </li>
     </ul>
-  </li>
-
-  <li>
-    <a href="/resources" class="block px-6 py-2 hover:bg-gray-800">Character Creation</a>
   </li>
   <li>
     <a href="/gather" class="block px-6 py-2 hover:bg-gray-800">Reference</a>
