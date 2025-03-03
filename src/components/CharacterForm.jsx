@@ -124,7 +124,7 @@ const CharacterForm = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl bg-gray-800 p-6 rounded-lg shadow-lg">
+    <div className="w-full max-w-3xl bg-gray-800 p-6 rounded-lg shadow-lg relative">
       {step === 1 && (
         <div className="text-center">
           <h2 class="text-2xl font-bold mb-4">Select a Species</h2>
@@ -287,8 +287,7 @@ const CharacterForm = () => {
             </button>
             <button
               onClick={skipStep}
-              className="absolute right-100 cursor-pointer hover:underline px-4 py-2 bg-gray-700 text-white rounded"
-              style={{ marginLeft: "200px" }}
+              className="absolute bottom-6 right-6 cursor-pointer hover:underline px-4 py-2 bg-gray-700 text-white rounded"
             >
               Skip
             </button>
