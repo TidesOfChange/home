@@ -2,6 +2,7 @@
 import Footer from '../components/Footer.astro';
 const { url } = Astro;
 const isPlayPage = url.pathname === "/play_interface";
+const isStartPage = url.pathname === "/";
 ---
 
 
@@ -32,9 +33,19 @@ const isPlayPage = url.pathname === "/play_interface";
       <!-- RIGHT SIDE: Optional nav links -->
       <nav>
         <ul class="flex space-x-4">
+          {!isStartPage && (
+            <li>
+              <a href="/char_form" class="px-4 py-2 bg-yellow-500 text-black rounded hover:bg-yellow-700">
+                Character Creation
+              </a>
+            </li>
+          )}
           {isPlayPage && (
-            <li><a href="/char_form" class="px-4 py-2 bg-yellow-500 text-black rounded hover:bg-yellow-700">Character Creation</a></li>
-            <li><a href="/dice-roll" class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900">Dice Roll</a></li>
+            <li>
+              <a href="/dice-roll" class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900">
+                Dice Roll
+              </a>
+            </li>
           )}
           <li><a href="/contact" class="hover:text-gray-300">Contact</a></li>
         </ul>
@@ -104,34 +115,9 @@ const isPlayPage = url.pathname === "/play_interface";
   
   <!-- Dropdown for "Species" -->
   <li>
-    <button
-      type="button"
-      class="w-full text-left block px-6 py-2 hover:bg-gray-800 flex items-center justify-between"
-      onclick="toggleDropdown('dropdown-species')"
-    >
-      Species <span class="ml-2">&#9662;</span>
-    </button>
-    <ul id="dropdown-species" class="hidden space-y-2 pl-6">
-      <li>
-        <a href="/about" class="block px-6 py-2 hover:bg-gray-800">Mutated Humans</a>
-      </li>
-      <li>
-        <a href="/about" class="block px-6 py-2 hover:bg-gray-800">Woodland Creatures</a>
-      </li>
-      <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Bird Pirates</a>
-      </li>
-      <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Ecotapians</a>
-      </li>
-      <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Aqualumeans</a>
-      </li>
-      <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Lumea Humans</a>
-      </li>
-    </ul>
+    <a href="/Species" class="block px-6 py-2 hover:bg-gray-800">Species</a>
   </li>
+  
 
   <!-- Dropdown for "Class" -->
   <li>
