@@ -40,6 +40,9 @@ const isStartPage = url.pathname === "/";
               </a>
             </li>
           )}
+          {!isStartPage && !isPlayPage && (
+          <li><a href="/play_interface" class="px-4 py-2 bg-green-500 text-black rounded hover:bg-green-700">Start Your Adventure</a></li>
+          )}
           {isPlayPage && (
             <li>
               <a href="/dice-roll" class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900">
