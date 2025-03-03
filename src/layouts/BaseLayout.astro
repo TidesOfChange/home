@@ -98,37 +98,9 @@ const isPlayPage = url.pathname === "/play_interface";
   
   <!-- Dropdown for "Regions" -->
   <li>
-    <button
-      type="button"
-      class="w-full text-left block px-6 py-2 hover:bg-gray-800 flex items-center justify-between"
-      onclick="toggleDropdown('dropdown-regions')"
-    >
-      Regions <span class="ml-2">&#9662;</span>
-    </button>
-    <ul id="dropdown-regions" class="hidden space-y-2 pl-6">
-      <li>
-        <a href="/Regions" class="block px-6 py-2 hover:bg-gray-800">Map of Regions</a>
-      </li>
-      <li>
-        <a href="/about" class="block px-6 py-2 hover:bg-gray-800">Mainland</a>
-      </li>
-      <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Aeolian Archipelago</a>
-      </li>
-      <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Lumea</a>
-      </li>
-      <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Karkote</a>
-      </li>
-      <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Grønn Verden</a>
-      </li>
-      <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Sylvangrove</a>
-      </li>
-    </ul>
+    <a href="/Regions" class="block px-6 py-2 hover:bg-gray-800">Regions</a>
   </li>
+  
   
   <!-- Dropdown for "Species" -->
   <li>
