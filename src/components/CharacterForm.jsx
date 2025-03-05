@@ -51,7 +51,14 @@ const CharacterForm = () => {
     species: "",
     class: "",
     background: "",
-    stats: { Strength: 0, Intelligence: 0, Agility: 0 },
+    stats: {
+      Strength: 0,
+      Intelligence: 0,
+      Wisdom: 0,
+      Dexterity: 0,
+      Constitution: 0,
+      Charisma: 0,
+    },
   });
 
   const handleSelection = (key, value) => {
@@ -74,15 +81,18 @@ const CharacterForm = () => {
       alert("Please select a background first, or skip this step.");
       return;
     }
-    // if (step === 4 && !character.class) {
-    //   alert("Please input stats first, or skip this step.");
-    //   return;
-    // }
     setStep((prev) => prev + 1);
   };
 
   const prevStep = () => setStep(step - 1);
   const skipStep = () => setStep(step + 1);
+
+  const saveCharacter = () => {
+    const characters = JSON.parse(localStorage.getItem("characters")) || [];
+    characters.push(character);
+    localStorage.setItem("characters", JSON.stringify(characters));
+    window.location.href = "/play_interface";
+  };
 
   const exportToJSON = () => {
     const jsonData = JSON.stringify(character, null, 2);
@@ -97,7 +107,8 @@ const CharacterForm = () => {
     doc.text(`Class: ${character.class}`, 20, 40);
     doc.text(`Background: ${character.background}`, 20, 50);
     doc.text(
-      `Stats: Strength: ${character.stats.Strength}, Intelligence: ${character.stats.Intelligence}, Agility: ${character.stats.Agility}`,
+      `Stats: Strength: ${character.stats.Strength}, Intelligence: ${character.stats.Intelligence}, Wisdom: ${character.stats.Wisdom},
+      Dexterity: ${character.stats.Dexterity}, Constitution: ${character.stats.Constitution}, Charisma: ${character.stats.Charisma}`,
       20,
       60
     );
@@ -204,7 +215,7 @@ const CharacterForm = () => {
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">Assign Stats</h2>
           <p className="text-gray-400 mb-4">
-            Distribute 15 points among Strength, Intelligence, and Agility.
+            Distribute 30 points among the stats.
           </p>
           <div className="flex flex-col items-center gap-4">
             {Object.keys(character.stats).map((stat) => (
@@ -240,8 +251,9 @@ const CharacterForm = () => {
           </p>
           <p className="mb-4">
             <strong>Stats:</strong> <br />
-            Strength: {character.stats.Strength}, Intelligence:{" "}
-            {character.stats.Intelligence}, Agility: {character.stats.Agility}
+            Strength: {character.stats.Strength}, Intelligence:{character.stats.Intelligence},
+            Wisdom: {character.stats.Wisdom}, Dexterity: {character.stats.Dexterity},
+            Constitution: {character.stats.Constitution}, Charisma: {character.stats.Charisma}
           </p>
 
           <div className="flex items-center justify-center gap-4 mt-4">
@@ -294,9 +306,7 @@ const CharacterForm = () => {
           </>
         ) : (
           <button
-            onClick={() => {
-              window.location.href = "/play_interface";
-            }}
+            onClick={saveCharacter}
             className="cursor-pointer px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-700"
           >
             Finish & Start Your Adventure
