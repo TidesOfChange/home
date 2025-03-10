@@ -2,45 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import pkg from "file-saver";
 const { saveAs } = pkg;
 
-const speciesOptions = [
-  {
-    name: "Mutated Humans",
-    image: "/images/karkorte/kraken.png",
-    description: "Survivors of a harsh world, adapted to radiation.",
-  },
-  {
-    name: "Woodland Creatures",
-    image: "/images/karkorte/kraken.png",
-    description: "Mystical beings living in harmony with nature.",
-  },
-  {
-    name: "Bird Pirates",
-    image: "/images/karkorte/kraken.png",
-    description: "Airborne adventurers who rule the skies.",
-  },
-];
-
-const classOptions = [
-  {
-    name: "Scavenger",
-    image: "/images/karkorte/kraken.png",
-    description: "Survival expert and resourceful.",
-  },
-  {
-    name: "Hunter",
-    image: "/images/karkorte/kraken.png",
-    description: "Sharp-eyed and precise with a bow.",
-  },
-  {
-    name: "Ranger",
-    image: "/images/karkorte/kraken.png",
-    description: "Protector of the wilds.",
-  },
-];
-
 const CharacterCards = () => {
   const [characters, setCharacters] = useState([]);
-  const [panelWidth, setPanelWidth] = useState("25%"); // Default width
+  const [panelWidth, setPanelWidth] = useState("25%");
+  const [confirmDelete, setConfirmDelete] = useState(null);
   const panelRef = useRef(null);
 
   useEffect(() => {
@@ -48,41 +13,30 @@ const CharacterCards = () => {
       const savedCharacters = localStorage.getItem("characters");
       const savedWidth = localStorage.getItem("panelWidth");
 
-      if (savedCharacters) {
-        setCharacters(JSON.parse(savedCharacters));
-      }
-      if (savedWidth) {
-        setPanelWidth(savedWidth);
-      }
+      if (savedCharacters) setCharacters(JSON.parse(savedCharacters));
+      if (savedWidth) setPanelWidth(savedWidth);
     }
   }, []);
 
- const updateCharacter = (index, key, value) => {
-   const updatedCharacters = [...characters];
+  const updateCharacter = (index, key, value) => {
+    const updatedCharacters = [...characters];
 
-   if (key in updatedCharacters[index].stats) {
-     updatedCharacters[index].stats[key] = Math.max(0, parseInt(value) || 0);
-   } else {
-     updatedCharacters[index][key] = value;
-   }
+    if (key in updatedCharacters[index].stats) {
+      updatedCharacters[index].stats[key] = Math.max(0, parseInt(value) || 0);
+    } else {
+      updatedCharacters[index][key] = value;
+    }
 
-   // Assign correct image when species or class is changed
-   if (key === "species") {
-     const species = speciesOptions.find((option) => option.name === value);
-     if (species) updatedCharacters[index].image = species.image;
-   }
-   if (key === "class") {
-     const characterClass = classOptions.find(
-       (option) => option.name === value
-     );
-     if (characterClass) updatedCharacters[index].image = characterClass.image;
-   }
+    setCharacters(updatedCharacters);
+    localStorage.setItem("characters", JSON.stringify(updatedCharacters));
+  };
 
-   setCharacters(updatedCharacters);
-   if (typeof window !== "undefined") {
-     localStorage.setItem("characters", JSON.stringify(updatedCharacters));
-   }
- };
+  const deleteCharacter = (index) => {
+    const updatedCharacters = characters.filter((_, i) => i !== index);
+    setCharacters(updatedCharacters);
+    setConfirmDelete(null);
+    localStorage.setItem("characters", JSON.stringify(updatedCharacters));
+  };
 
   const exportCharacters = () => {
     const jsonData = JSON.stringify(characters, null, 2);
@@ -100,9 +54,7 @@ const CharacterCards = () => {
     reader.onload = (e) => {
       const data = JSON.parse(e.target.result);
       setCharacters(data);
-      if (typeof window !== "undefined") {
-        localStorage.setItem("characters", JSON.stringify(data));
-      }
+      localStorage.setItem("characters", JSON.stringify(data));
     };
     reader.readAsText(file);
   };
@@ -115,11 +67,9 @@ const CharacterCards = () => {
 
   const handleMouseMove = (e) => {
     let newWidth = (e.clientX / window.innerWidth) * 100;
-    newWidth = Math.min(50, Math.max(15, newWidth)); // Keep between 15% and 50%
+    newWidth = Math.min(50, Math.max(15, newWidth));
     setPanelWidth(`${newWidth}%`);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("panelWidth", `${newWidth}%`);
-    }
+    localStorage.setItem("panelWidth", `${newWidth}%`);
   };
 
   const handleMouseUp = () => {
@@ -129,7 +79,7 @@ const CharacterCards = () => {
 
   const getColumnClass = () => {
     const width = parseFloat(panelWidth);
-    return width > 30 ? "grid-cols-3" : "grid-cols-2";
+    return width > 30 ? "grid-cols-2" : "grid-cols-1";
   };
 
   return (
@@ -150,12 +100,36 @@ const CharacterCards = () => {
       {characters.length > 0 ? (
         <>
           {/* Scrollable Character Grid */}
-          <div className="h-96 overflow-y-auto scrollbar-hide px-4">
+          <div className="h-full overflow-y-auto scrollbar-hide px-4">
             <div className={`grid ${getColumnClass()} gap-4`}>
               {characters.map((char, index) => (
-                <div key={index} className="p-3 bg-gray-800 rounded shadow-lg">
+                <div
+                  key={index}
+                  className="p-3 bg-gray-800 rounded shadow-lg relative"
+                >
+                  {/* 🔹 Toggle Between Species or Class Image (Per Character) */}
+                  <button
+                    onClick={() =>
+                      updateCharacter(
+                        index,
+                        "showSpeciesImage",
+                        !char.showSpeciesImage
+                      )
+                    }
+                    className="cursor-pointer px-2 py-1 bg-gray-600 text-white rounded text-xs mb-2"
+                  >
+                    {char.showSpeciesImage
+                      ? "Show Class Image"
+                      : "Show Species Image"}
+                  </button>
+
+                  {/* 🔹 Character Image (Species OR Class based on toggle) */}
                   <img
-                    src={char.image}
+                    src={
+                      char.showSpeciesImage
+                        ? char.species_image
+                        : char.class_image
+                    }
                     alt="Character"
                     className="w-full h-32 object-cover rounded"
                   />
@@ -174,6 +148,7 @@ const CharacterCards = () => {
                   <p className="text-sm">Species: {char.species}</p>
                   <p className="text-sm">Class: {char.class}</p>
 
+                  {/* Editable Stats */}
                   <div className="mt-2">
                     {Object.keys(char.stats).map((stat) => (
                       <div
@@ -205,38 +180,47 @@ const CharacterCards = () => {
                     }
                     placeholder="Character Description"
                   />
+
+                  {/* Delete Character Button */}
+                  <button
+                    onClick={() => setConfirmDelete(index)}
+                    className="cursor-pointer absolute top-4 right-3 px-1 py-1 bg-gray-700 text-white rounded text-xs"
+                  >
+                    ✖
+                  </button>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Import & Export Buttons */}
-          <div className="mt-4 flex gap-2 justify-center">
-            <button
-              className="px-3 py-2 bg-blue-600 rounded"
-              onClick={exportCharacters}
-            >
-              Export
-            </button>
-            <input
-              type="file"
-              className="hidden"
-              id="importFile"
-              onChange={importCharacters}
-            />
-            <label
-              htmlFor="importFile"
-              className="px-3 py-2 bg-green-600 rounded cursor-pointer"
-            >
-              Import
-            </label>
-          </div>
+          {/* Delete Confirmation Popup */}
+          {confirmDelete !== null && (
+            <div className="absolute inset-0 bg-black bg-opacity-70 flex justify-center items-center">
+              <div className="bg-gray-800 p-6 rounded-lg text-center shadow-lg">
+                <p className="text-white text-lg mb-4">
+                  Are you sure you want to delete this character?
+                </p>
+                <button
+                  onClick={() => deleteCharacter(confirmDelete)}
+                  className="cursor-pointer px-4 py-2 bg-red-600 text-white rounded mr-2"
+                >
+                  Yes, Delete
+                </button>
+                <button
+                  onClick={() => setConfirmDelete(null)}
+                  className="cursor-pointer px-4 py-2 bg-gray-600 text-white rounded"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          )}
         </>
       ) : (
         <>
           <p className="text-center">No characters created yet.</p>
           <button
-            className="mt-4 px-4 py-2 bg-yellow-600 rounded block mx-auto"
+            className="cursor-pointer mt-4 px-4 py-2 bg-yellow-600 rounded block mx-auto"
             onClick={() => (window.location.href = "/char_form")}
           >
             Create Character

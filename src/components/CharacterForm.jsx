@@ -19,6 +19,21 @@ const speciesOptions = [
     image: "/images/karkorte/kraken.png",
     description: "Airborne adventurers who rule the skies.",
   },
+  {
+    name: "Ecotopians",
+    image: "/images/karkorte/kraken.png",
+    description: "Airborne adventurers who rule the skies.",
+  },
+  {
+    name: "Bird Pirates",
+    image: "/images/karkorte/kraken.png",
+    description: "Airborne adventurers who rule the skies.",
+  },
+  {
+    name: "Bird Pirates",
+    image: "/images/karkorte/kraken.png",
+    description: "Airborne adventurers who rule the skies.",
+  },
 ];
 
 const classOptions = [
@@ -49,7 +64,9 @@ const CharacterForm = () => {
   const [step, setStep] = useState(1);
   const [character, setCharacter] = useState({
     species: "",
+    species_image: "",
     class: "",
+    class_image: "",
     background: "",
     stats: {
       Strength: 0,
@@ -143,7 +160,10 @@ const CharacterForm = () => {
             {speciesOptions.map((option) => (
               <div
                 key={option.name}
-                onClick={() => handleSelection("species", option.name)}
+                onClick={() => {
+                  handleSelection("species", option.name);
+                  handleSelection("species_image", option.image);
+                }}
                 className={`cursor-pointer border rounded-lg p-3 transition duration-100 ${
                   character.species === option.name
                     ? "border-blue-400"
@@ -170,7 +190,10 @@ const CharacterForm = () => {
             {classOptions.map((option) => (
               <div
                 key={option.name}
-                onClick={() => handleSelection("class", option.name)}
+                onClick={() => {
+                  handleSelection("class", option.name);
+                  handleSelection("class_image", option.image);
+                }}
                 className={`cursor-pointer border rounded-lg p-3 transition duration-100 ${
                   character.class === option.name
                     ? "border-blue-400"
@@ -251,9 +274,10 @@ const CharacterForm = () => {
           </p>
           <p className="mb-4">
             <strong>Stats:</strong> <br />
-            Strength: {character.stats.Strength}, Intelligence:{character.stats.Intelligence},
-            Wisdom: {character.stats.Wisdom}, Dexterity: {character.stats.Dexterity},
-            Constitution: {character.stats.Constitution}, Charisma: {character.stats.Charisma}
+            Strength: {character.stats.Strength}, Intelligence:
+            {character.stats.Intelligence}, Wisdom: {character.stats.Wisdom},
+            Dexterity: {character.stats.Dexterity}, Constitution:{" "}
+            {character.stats.Constitution}, Charisma: {character.stats.Charisma}
           </p>
 
           <div className="flex items-center justify-center gap-4 mt-4">
