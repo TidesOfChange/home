@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <section class="max-w-4xl mx-auto p-6 space-y-6">
+    <!-- Title -->
+    <h1 class="text-5xl font-bold">Magic</h1>
+    
+    <!-- Introduction -->
+    <p>Some characters have learned how to draw energy from surrounding natural forces in order to power simple magical effects.</p>
+    <p>Spells must be learned and mastered through practice and concentration. The amount of spells a character knows is equal to their rank in their Magic attribute -1. So if a character has a 3 in Magic, they know 2 spells. If they spend XP to increase their magic to a 4, they can learn one new spell. Certain abilities and expertises may grant additional spells that are separate from this total.</p>
+
+    <!-- Caution Box -->
+    <div class="bg-yellow-700 p-4 rounded-md">
+      <strong>⚠ Caution</strong>
+      <p>Characters cannot change the spells they know. Once they’ve learned a spell, they always know that spell (though they may become unable to draw on the energy that powers it due to various effects).</p>
+    </div>
+
+    <p>Only one spell may be cast by a character at a time – <strong>spells cannot be stacked.</strong> The amount of focus and concentration, however, is mentally exhausting. And so each known spell can be cast no more than twice per day before the character will need to rest. After a full period of sleep, all spells are regained.</p>
+
+    <!-- Spell Categories -->
+    <h2 class="text-3xl font-semibold">Spells</h2>
+    <p>There are 5 categories of spells:</p>
+    
+    <div class="grid grid-cols-2 gap-4">
+        <a href="#social-spells" class="block text-center bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition">Social Spells →</a>
+        <a href="#defensive-spells" class="block text-center bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition">Defensive Spells →</a>
+        <a href="#healing-spells" class="block text-center bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition">Healing Spells →</a>
+        <a href="#attack-spells" class="block text-center bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition">Attack Spells →</a>
+        <a href="#elemental-spells" class="block text-center bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition">Elemental Spells →</a>
+      </div>
+
+    <!-- Social Spells -->
+    <h2 class="text-3xl font-semibold mt-6">Social Spells</h2>
+    <table class="w-full border-collapse border border-gray-700">
+      <thead>
+        <tr class="bg-gray-800">
+          <th class="border border-gray-700 p-2">Spell</th>
+          <th class="border border-gray-700 p-2">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border border-gray-700 p-2">Charm</td>
+          <td class="border border-gray-700 p-2">Casts feeling of friendliness and trustfulness...</td>
+        </tr>
+        <tr>
+          <td class="border border-gray-700 p-2">Petrify</td>
+          <td class="border border-gray-700 p-2">Freezes the target with fear and makes them lose composure...</td>
+        </tr>
+        <tr>
+          <td class="border border-gray-700 p-2">Telepathy</td>
+          <td class="border border-gray-700 p-2">Allows the caster to communicate telepathically...</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Defensive Spells -->
+    <h2 class="text-3xl font-semibold mt-6">Defensive Spells</h2>
+    <table class="w-full border-collapse border border-gray-700">
+      <thead>
+        <tr class="bg-gray-800">
+          <th class="border border-gray-700 p-2">Spell</th>
+          <th class="border border-gray-700 p-2">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border border-gray-700 p-2">Shroud of Invisibility</td>
+          <td class="border border-gray-700 p-2">The caster and anyone touching them becomes invisible...</td>
+        </tr>
+        <tr>
+          <td class="border border-gray-700 p-2">Share the Pain</td>
+          <td class="border border-gray-700 p-2">The caster designates a character and shares damage 50/50...</td>
+        </tr>
+        <tr>
+          <td class="border border-gray-700 p-2">Oono’s Reversal</td>
+          <td class="border border-gray-700 p-2">The caster may reflect damage back on the attacker...</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Healing Spells -->
+    <h2 class="text-3xl font-semibold mt-6">Healing Spells</h2>
+    <table class="w-full border-collapse border border-gray-700">
+      <thead>
+        <tr class="bg-gray-800">
+          <th class="border border-gray-700 p-2">Spell</th>
+          <th class="border border-gray-700 p-2">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border border-gray-700 p-2">Healing Bubble</td>
+          <td class="border border-gray-700 p-2">The caster throws a healing bubble that restores 2d6 health...</td>
+        </tr>
+        <tr>
+          <td class="border border-gray-700 p-2">Health Transference</td>
+          <td class="border border-gray-700 p-2">The caster can take life from another being to heal themselves...</td>
+        </tr>
+        <tr>
+          <td class="border border-gray-700 p-2">Strengthen</td>
+          <td class="border border-gray-700 p-2">Removes conditions and restores attributes affected by them...</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</BaseLayout>
