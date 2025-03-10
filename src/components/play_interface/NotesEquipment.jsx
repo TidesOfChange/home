@@ -30,19 +30,19 @@ const NotesEquipment = () => {
     <div className="w-1/2 p-4 bg-gray-800 text-white">
       <h2 className="text-xl font-bold mb-4">Notes & Equipment</h2>
       <textarea
-        className="w-full h-32 p-2 bg-gray-700 text-white"
+        className="w-full h-1/3 p-2 bg-gray-700 text-white"
         value={notes}
         onChange={(e) => setNotes(e.target.value)}
         placeholder="Write notes or track story progress..."
       />
-      <h3 className="mt-4 text-lg">Equipment</h3>
+      <h3 className="mt-4 text-lg ">Equipment</h3>
       <ul className="list-disc pl-6">
         {equipment.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
       </ul>
       <button
-        className="mt-2 px-3 py-2 bg-blue-600 rounded"
+        className="mt-2 px-3 py-2 bg-blue-600 rounded cursor-pointer"
         onClick={() => setEquipment([...equipment, "New Item"])}
       >
         Add Equipment

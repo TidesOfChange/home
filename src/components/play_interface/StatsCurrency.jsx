@@ -10,7 +10,7 @@ const StatsCurrency = () => {
       <h2 className="text-xl font-bold mb-4">Character Stats</h2>
       <p>Wound Tracker: {wounds}</p>
       <button
-        className="mt-2 px-3 py-2 bg-red-600 rounded"
+        className="mt-2 px-3 py-2 bg-red-600 rounded cursor-pointer"
         onClick={() => setWounds(wounds + 1)}
       >
         Take Damage
@@ -18,7 +18,7 @@ const StatsCurrency = () => {
       <h3 className="mt-4 text-lg">Currency</h3>
       <p>Gold: {gold}</p>
       <button
-        className="mt-2 px-3 py-2 bg-yellow-600 rounded"
+        className="mt-2 px-3 py-2 bg-yellow-600 rounded cursor-pointer"
         onClick={() => setGold(gold + 10)}
       >
         Earn Gold
@@ -30,7 +30,7 @@ const StatsCurrency = () => {
         ))}
       </ul>
       <button
-        className="mt-2 px-3 py-2 bg-green-600 rounded"
+        className="mt-2 px-3 py-2 bg-green-600 rounded cursor-pointer"
         onClick={() => setSkills([...skills, "New Skill"])}
       >
         Add Skill
