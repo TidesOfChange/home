@@ -23,19 +23,70 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p class="mb-4">
       Once players start gaining XP for characters, they can invest it in specific stats or abilities:
     </p>
-    <ul class="list-disc list-inside mb-4 space-y-2">
+    <ul class="list-inside mb-4 space-y-10">
       <li>
-        <strong>Health Points:</strong> For example, every 5 XP might grant +2 rank in Health Hit Points. To increase hit points, players can spend 5 XP to add +2 to their maximum HP. If you’re using a system where 1 rank = 3HP, each additional rank can cost 5 XP.
+        <strong>Health:</strong>
+        <ul class="list-disc list-inside ml-6 mb-10 space-y-2">
+          <li>Each character starts with 10 + rank in Health hit points. To increase hi
+          </li>
+          <li>
+            <strong>Example:</strong> A character with a rank 3 in health would spend
+          </li>
+        </ul>
       </li>
       <li>
-        <strong>Skills:</strong> If your system allows you to invest XP directly into skill ranks (like hacking, stealth, or cybernetics), you can require a certain amount of XP per rank. 
+        <strong>Attributes:</strong> 
+        <ul class="list-disc list-inside ml-6 mb-10 space-y-2">
+          <li>To level up an attribute, multiply the new rank x 10 in XP
+          </li>
+          <li>
+            <strong>Example:</strong> Leveling up Magic from 3 to 4 would cost 40XP
+          </li>
+        </ul>
       </li>
       <li>
-        <strong>Expertise:</strong> Some GMs may allow players to buy special feats or perks with XP. For example, a perk might allow the character to learn a new weapon type or gain a new ability that modifies gameplay.
+        <strong>Skills:</strong> 
+        <ul class="list-disc list-inside ml-6 mb-10 space-y-2">
+          <li>To level up an existing skill, multiply the new rank x 5 in XP
+          </li>
+          <li>
+            <strong>Example:</strong> Leveling up Force from a 2 to 3 costs 15XP
+          </li>
+        </ul>
       </li>
+      <li>
+        <strong>New Skills:</strong> 
+        <ul class="list-disc list-inside ml-6 mb-10 space-y-2">
+          <li>Allocating XP to a skill the player is not proficient in and has no 
+            ranks in costs 10XP to acquire the first level, instead of 5, and should 
+            narratively make sense based on types of things the character has done. 
+            Once the new skill is acquired, additional leveling costs the same as 
+            existing skills.
+          </li>
+        </ul>
+      </li>
+        <li>
+          <strong>Expertise:</strong>
+          <ul class="list-disc list-inside ml-6 mb-10 space-y-2">
+            <li>The first expertise in a background tree is free at character creation. Leveling in the Expertise tree, however, costs XP. The top row of the tree (level 1) costs 10XP each to acquire.</li>
+            <li>The second row (level 2) costs 20XP.</li>
+            <li>The third row (level 3) costs 30XP.</li>
+            <li>
+              <strong>Note:</strong> The progression through the tree also needs to be sequential (you cannot jump from level 1 to level 3 in an expertise). The unique starting background expertise is in the top left corner of this tree. The first level in the second column expertise also needs to be purchased before the first level in the third column expertise. But higher levels do not need to follow the same column progression so long as level one is acquired.
+            </li>
+            <li>
+              <strong>Example:</strong>
+              <pre class="bg-gray-800 text-white p-4 rounded-md">
+               1.1  →  1.2  →  1.3
+               ↓        ↓        ↓
+               2.1     2.2     2.3
+                ↓        ↓        ↓
+               3.1     3.2     3.3
+              </pre>
+            </li>
+          </ul>
+        </li>
     </ul>
-    <p class="mb-4">
-      In all cases, you should tie XP spending to in-game activities that justify the improvement.
-    </p>
+    
   </article>
 </BaseLayout>

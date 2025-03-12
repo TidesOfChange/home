@@ -1,0 +1,546 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <article class="max-w-5xl mx-auto p-8 text-white">
+    <!-- Page Title -->
+    <h1 class="text-4xl font-bold mb-4">Equipment</h1>
+    <p class="text-gray-300 mb-8">
+        Even though all territories might not subscribe to a system of currency, 
+        or may have their own internal system, there is a universal currency that 
+        is typically accepted at all places in the form of digital credits. 
+        Physical money no longer exists, but many items can also often be created 
+        with foraged supplies and successful Mechanics checks, or traded for.
+    </p>
+    <p class="text-gray-300 mb-8">
+        All characters start with basic necessities - clothes suitable for 
+        their environment/background, basic everyday supplies, a modest dwelling 
+        of a sort appropriate to the environment, etc.
+
+
+    </p>
+    <p class="text-gray-300 mb-8">
+        Backgrounds start with an additional three pieces of specific gear for 
+        characters.
+    </p>
+    
+    <!-- Weapons Section -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">Weapons</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Example item card -->
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+          <!-- Icon Box (color-coded) -->
+          <div class="w-8 h-8 flex items-center justify-center bg-purple-600 text-white rounded font-bold">
+            <span>Wpn</span>
+          </div>
+          <!-- Item Details -->
+          <div>
+            <h3 class="text-lg font-bold">Brass Knuckles</h3>
+            <p class="text-sm text-gray-300">
+                An extra 1d6 to unarmed attacks (50c)
+            </p>
+          </div>
+        </div>
+        
+        <!-- Repeat for each weapon item -->
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+          <div class="w-8 h-8 flex items-center justify-center bg-purple-600 text-white rounded font-bold">
+            <span>Wpn</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">Staff or Club</h3>
+            <p class="text-sm text-gray-300">
+              1d6 (50c)
+            </p>
+          </div>
+        </div>
+        
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+          <div class="w-8 h-8 flex items-center justify-center bg-purple-600 text-white rounded font-bold">
+            <span>Wpn</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">Pellet Gun</h3>
+            <p class="text-sm text-gray-300">
+                1d6 (50c) + Bag of 20 pellets (25c)
+            </p>
+          </div>
+        </div>
+        
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+          <div class="w-8 h-8 flex items-center justify-center bg-purple-600 text-white rounded font-bold">
+            <span>Wpn</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">Large Bow</h3>
+            <p class="text-sm text-gray-300">
+                2d6 (100c) - 20 bolts (25c)
+            </p>
+          </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-purple-600 text-white rounded font-bold">
+              <span>Wpn</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Electric Probe</h3>
+              <p class="text-sm text-gray-300">
+                2d6 and electrical components are overloaded, lasts 20 uses 
+                before needing to be recharged (200c)
+              </p>
+            </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-purple-600 text-white rounded font-bold">
+              <span>Wpn</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Dagger</h3>
+              <p class="text-sm text-gray-300">
+                    1d6 (50c)
+              </p>
+            </div>
+        </div>
+        
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-purple-600 text-white rounded font-bold">
+              <span>Wpn</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Sword</h3>
+              <p class="text-sm text-gray-300">
+                1d6 (50c) or 2d6 (100c)
+              </p>
+            </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-purple-600 text-white rounded font-bold">
+              <span>Wpn</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Laser Pistol</h3>
+              <p class="text-sm text-gray-300">
+                2d6, lasts 20 uses before needing to be recharged (100c) or 3d6 (200c)
+
+
+              </p>
+            </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-purple-600 text-white rounded font-bold">
+              <span>Wpn</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Harpoon Gun</h3>
+              <p class="text-sm text-gray-300">
+                2d6 and target is snared (150c) + Replacement harpoon (50c)
+
+
+              </p>
+            </div>
+        </div>
+
+      </div>
+    </section>
+    
+    <!-- Clothing & Armour Section -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">Clothing And Armour</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Example item card -->
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+          <div class="w-8 h-8 flex items-center justify-center bg-green-600 text-white rounded font-bold">
+            <span>Arm</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">Camouflage Clothing</h3>
+            <p class="text-sm text-gray-300">
+              (3c) - Helps blend into natural environments.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Repeat for more clothing/armour items -->
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+          <div class="w-8 h-8 flex items-center justify-center bg-green-600 text-white rounded font-bold">
+            <span>Arm</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">Athleisure Wear</h3>
+            <p class="text-sm text-gray-300">
+              +1 to Reaction (100c)
+            </p>
+          </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-green-600 text-white rounded font-bold">
+              <span>Arm</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Wetsuit</h3>
+              <p class="text-sm text-gray-300">
+                Insulates wearer in the water, +2 to Swimming(100c)
+              </p>
+            </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-green-600 text-white rounded font-bold">
+              <span>Arm</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Leather Pants</h3>
+              <p class="text-sm text-gray-300">
+                +1 to defense, can be combined with jacket (100c)
+              </p>
+            </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-green-600 text-white rounded font-bold">
+              <span>Arm</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Breathing Apparatus</h3>
+              <p class="text-sm text-gray-300">
+                Pulls oxygen from water or moisture from the air (300c)
+              </p>
+            </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-green-600 text-white rounded font-bold">
+              <span>Arm</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Waterproof Backpack</h3>
+              <p class="text-sm text-gray-300">
+                (75c)
+              </p>
+            </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-green-600 text-white rounded font-bold">
+              <span>Arm</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Sharp Clothing</h3>
+              <p class="text-sm text-gray-300">
+                +1 to Personality checks (200c)
+              </p>
+            </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-green-600 text-white rounded font-bold">
+              <span>Arm</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Temperature Regulating Coat</h3>
+              <p class="text-sm text-gray-300">
+                Keeps wearer from getting to hot or too cold (100c)
+              </p>
+            </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-green-600 text-white rounded font-bold">
+              <span>Arm</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Leather Jacket</h3>
+              <p class="text-sm text-gray-300">
+                +1 to defense, can be combined with pants (100c)
+              </p>
+            </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-green-600 text-white rounded font-bold">
+              <span>Arm</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Fish Scale Armor</h3>
+              <p class="text-sm text-gray-300">
+                +2 to defense (150c)
+              </p>
+            </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-green-600 text-white rounded font-bold">
+              <span>Arm</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Hard Hat or Helmet</h3>
+              <p class="text-sm text-gray-300">
+                +1 to Defense (50c)
+              </p>
+            </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-green-600 text-white rounded font-bold">
+              <span>Arm</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Regular bag or backpack</h3>
+              <p class="text-sm text-gray-300">
+                (25c)
+              </p>
+            </div>
+          </div>
+
+      </div>
+    </section>
+
+
+    
+    <!-- Tools Section -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">Tools</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Example tool item -->
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+          <div class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white rounded font-bold">
+            <span>Tl</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">Solar Charging Kit</h3>
+            <p class="text-sm text-gray-300">
+                Converts one hour of sunlight into a full charge for electrical devices, or 1/2 charge for electric vehicles (300c)
+
+
+            </p>
+          </div>
+        </div>
+        
+        <!-- More tool items... -->
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+          <div class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white rounded font-bold">
+            <span>Tl</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">Myeclium-based Neural Network Device</h3>
+            <p class="text-sm text-gray-300">
+                +1 to Deduction and Foraging (150c)
+            </p>
+          </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white rounded font-bold">
+              <span>Tl</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Sonar Mapper</h3>
+              <p class="text-sm text-gray-300">
+                Generates a topographical map of a 75ft radius underwater area and all large moving creatures within it (300c)
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white rounded font-bold">
+              <span>Tl</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Night Vision Googles</h3>
+              <p class="text-sm text-gray-300">
+                Allows vision to a distance of 100ft in total darkness (50c)
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white rounded font-bold">
+              <span>Tl</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Forging Kit</h3>
+              <p class="text-sm text-gray-300">
+                Create 10 false documents that add a +5 to being detected (100c)
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white rounded font-bold">
+              <span>Tl</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Tool Kit</h3>
+              <p class="text-sm text-gray-300">
+                Latching box containing basic tools - hammer, screwdriver, wrench, misc. nails, etc (50c)
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white rounded font-bold">
+              <span>Tl</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Grappling Hook</h3>
+              <p class="text-sm text-gray-300">
+                +4 to Climbing (50c)
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white rounded font-bold">
+              <span>Tl</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Ecotechnical Multi Tool</h3>
+              <p class="text-sm text-gray-300">
+                Enhances all technological abilities with a +1 (150c)
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white rounded font-bold">
+              <span>Tl</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Data tablet</h3>
+              <p class="text-sm text-gray-300">
+                Allows access to information and hacking with internet connection (150c)
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white rounded font-bold">
+              <span>Tl</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Compass</h3>
+              <p class="text-sm text-gray-300">
+                +1 to Awareness checks involving navigation (50c)
+
+
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white rounded font-bold">
+              <span>Tl</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Underwater Goggles</h3>
+              <p class="text-sm text-gray-300">
+                Improves underwater vision, +1 to Awareness while underwater (100c)
+              </p>
+            </div>
+          </div>
+      </div>
+    </section>
+    
+    <!-- Vehicles Section -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">Vehicles</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Example vehicle item -->
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+          <div class="w-8 h-8 flex items-center justify-center bg-red-600 text-white rounded font-bold">
+            <span>Veh</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">Manual Wheelchair</h3>
+            <p class="text-sm text-gray-300">
+                Allows creatures without operational legs to move on land, -1 to Sneakiness and Reaction (100c)
+            </p>
+          </div>
+        </div>
+        
+        <!-- More vehicles... -->
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+          <div class="w-8 h-8 flex items-center justify-center bg-red-600 text-white rounded font-bold">
+            <span>Veh</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">Motorbike</h3>
+            <p class="text-sm text-gray-300">
+                Quadruples speed, must be recharged every 200 miles (500c)
+            </p>
+          </div>
+        </div>
+
+        <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-red-600 text-white rounded font-bold">
+              <span>Veh</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Hoverbike</h3>
+              <p class="text-sm text-gray-300">
+                Quadruples speed and is not impeded by terrain or obstacles, must be recharged every 200 miles (750c)
+
+
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-red-600 text-white rounded font-bold">
+              <span>Veh</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Living Mount</h3>
+              <p class="text-sm text-gray-300">
+                Large creature can carry one person, may deal 2d6 damage to ramming, kicking, biting, or trampling attacks (1000c + 5c per day in supplies or equivalent foraging)
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-red-600 text-white rounded font-bold">
+              <span>Veh</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Cloundrunning Glider</h3>
+              <p class="text-sm text-gray-300">
+                Allows for gliding on air currents (750c)
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-red-600 text-white rounded font-bold">
+              <span>Veh</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Bicycle</h3>
+              <p class="text-sm text-gray-300">
+                Doubles speed for a number of hours equal to rank in strength, requires limbs to pedal (100c)
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-gray-800 rounded shadow flex items-center space-x-4">
+            <div class="w-8 h-8 flex items-center justify-center bg-red-600 text-white rounded font-bold">
+              <span>Veh</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Water Ski</h3>
+              <p class="text-sm text-gray-300">
+                A bike for up to 2 people that can propel on top of or underwater, must be recharged every 200 miles (750c)
+              </p>
+            </div>
+          </div>
+
+      </div>
+    </section>
+  </article>
+</BaseLayout>
