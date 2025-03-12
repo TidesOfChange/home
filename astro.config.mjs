@@ -10,13 +10,8 @@ export default defineConfig({
   site: "https://tidesofchange.github.io",
   base: "/home",
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss()]
   },
 
-  integrations: [react()],
-  markdown: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-    shikiConfig: {},
-  },
+  integrations: [react()]
 });
