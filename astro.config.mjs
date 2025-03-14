@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-import tailwindcss from '@tailwindcss/vite';
+import tailwind from "@astrojs/tailwind";
 
 import react from '@astrojs/react';
 
@@ -9,8 +9,5 @@ import react from '@astrojs/react';
 export default defineConfig({
   site: "https://tidesofchange.github.io",
   base: "/home",
-  vite: {
-    plugins: [tailwindcss()]
-  },
-  integrations: [react()]
+  integrations: [tailwind(), react()],
 });
