@@ -6,32 +6,32 @@ import { jsPDF } from "jspdf";
 const speciesOptions = [
   {
     name: "Mutated Humans",
-    image: "/images/karkorte/kraken.png",
+    image: "/home/images/karkorte/kraken.png",
     description: "Survivors of a harsh world, adapted to radiation.",
   },
   {
     name: "Woodland Creatures",
-    image: "/images/karkorte/kraken.png",
+    image: "/home/images/karkorte/kraken.png",
     description: "Mystical beings living in harmony with nature.",
   },
   {
     name: "Bird Pirates",
-    image: "/images/karkorte/kraken.png",
+    image: "/home/images/karkorte/kraken.png",
     description: "Airborne adventurers who rule the skies.",
   },
   {
     name: "Ecotopians",
-    image: "/images/sylvangrove/tree-person.png",
+    image: "/home/images/sylvangrove/tree-person.png",
     description: "Airborne adventurers who rule the skies.",
   },
   {
     name: "Aqualumeans",
-    image: "/images/karkorte/kraken.png",
+    image: "/home/images/karkorte/kraken.png",
     description: "Airborne adventurers who rule the skies.",
   },
   {
     name: "Lumea Humans",
-    image: "/images/karkorte/kraken.png",
+    image: "/home/images/karkorte/kraken.png",
     description: "Airborne adventurers who rule the skies.",
   },
 ];
@@ -39,52 +39,52 @@ const speciesOptions = [
 const classOptions = [
   {
     name: "Scavenger",
-    image: "/images/karkorte/kraken.png",
+    image: "/home/images/karkorte/kraken.png",
     description: "Survival expert and resourceful.",
   },
   {
     name: "Hunter",
-    image: "/images/karkorte/kraken.png",
+    image: "/home/images/karkorte/kraken.png",
     description: "Sharp-eyed and precise with a bow.",
   },
   {
     name: "Ranger",
-    image: "/images/karkorte/kraken.png",
+    image: "/home/images/karkorte/kraken.png",
     description: "Protector of the wilds.",
   },
   {
     name: "Enchanter",
-    image: "/images/karkorte/kraken.png",
+    image: "/home/images/karkorte/kraken.png",
     description: "Survival expert and resourceful.",
   },
   {
     name: "Ecotechnicians",
-    image: "/images/karkorte/kraken.png",
+    image: "/home/images/karkorte/kraken.png",
     description: "Sharp-eyed and precise with a bow.",
   },
   {
     name: "Public Servants",
-    image: "/images/karkorte/kraken.png",
+    image: "/home/images/karkorte/kraken.png",
     description: "Protector of the wilds.",
   },
   {
     name: "Cloudrunners",
-    image: "/images/archipelago/cloudrunner.jpg",
+    image: "/home/images/archipelago/cloudrunner.jpg",
     description: "Survival expert and resourceful.",
   },
   {
     name: "Skycallers",
-    image: "/images/archipelago/skycaller.png",
+    image: "/home/images/archipelago/skycaller.png",
     description: "Sharp-eyed and precise with a bow.",
   },
   {
     name: "Farmers",
-    image: "/images/karkorte/kraken.png",
+    image: "/home/images/karkorte/kraken.png",
     description: "Protector of the wilds.",
   },
   {
     name: "Seed Keepers",
-    image: "/images/karkorte/kraken.png",
+    image: "/home/images/karkorte/kraken.png",
     description: "Protector of the wilds.",
   },
 ];
@@ -143,7 +143,7 @@ const CharacterForm = () => {
     const characters = JSON.parse(localStorage.getItem("characters")) || [];
     characters.push(character);
     localStorage.setItem("characters", JSON.stringify(characters));
-    window.location.href = "/play_interface";
+    window.location.href = "/home/play_interface";
   };
 
   const exportToJSON = () => {

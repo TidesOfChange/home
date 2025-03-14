@@ -1,8 +1,8 @@
 ---
 import Footer from '../components/Footer.astro';
 const { url } = Astro;
-const isPlayPage = url.pathname === "/play_interface";
-const isStartPage = url.pathname === "/";
+const isPlayPage = url.pathname === "/home/play_interface";
+const isStartPage = url.pathname === "/home";
 ---
 
 
@@ -10,7 +10,7 @@ const isStartPage = url.pathname === "/";
   <head>
     <meta charset="UTF-8" />
     <title>ToC Homepage</title>
-    <link rel="stylesheet" href="/src/styles/global.css" />
+    <link rel="stylesheet" href="/home/src/styles/global.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" />
 
   </head>
@@ -25,7 +25,7 @@ const isStartPage = url.pathname === "/";
         >
           &#9776;
         </button>
-        <a href="/" class="text-3xl font-bold font-pirata">
+        <a href="/home" class="text-3xl font-bold font-pirata">
           Tides of Change
         </a>
       </div>
@@ -35,22 +35,22 @@ const isStartPage = url.pathname === "/";
         <ul class="flex space-x-4">
           {!isStartPage && (
             <li>
-              <a href="/char_form" class="px-4 py-2 bg-yellow-500 text-black rounded hover:bg-yellow-700">
+              <a href="/home/char_form" class="px-4 py-2 bg-yellow-500 text-black rounded hover:bg-yellow-700">
                 Character Creation
               </a>
             </li>
           )}
           {!isStartPage && !isPlayPage && (
-          <li><a href="/play_interface" class="px-4 py-2 bg-green-500 text-black rounded hover:bg-green-700">Start/Continue Your Adventure</a></li>
+          <li><a href="/home/play_interface" class="px-4 py-2 bg-green-500 text-black rounded hover:bg-green-700">Start/Continue Your Adventure</a></li>
           )}
           {isPlayPage && (
             <li>
-              <a href="/dice-roll" class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900">
+              <a href="/home/dice-roll" class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900">
                 Dice Roll
               </a>
             </li>
           )}
-          <li><a href="/contact" class="hover:text-gray-300">Contact</a></li>
+          <li><a href="/home/contact" class="hover:text-gray-300">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -73,7 +73,7 @@ const isStartPage = url.pathname === "/";
       <!-- SIDEBAR NAV LINKS -->
 <ul class="pt-20 space-y-4">
   <li>
-    <a href="/" class="block px-6 py-2 hover:bg-gray-800">Home</a>
+    <a href="/home" class="block px-6 py-2 hover:bg-gray-800">Home</a>
   </li>
   
   <!-- Dropdown for "Rules" -->
@@ -87,35 +87,35 @@ const isStartPage = url.pathname === "/";
     </button>
     <ul id="dropdown-rules" class="hidden space-y-2 pl-6">
       <li>
-        <a href="/CharacterLeveling" class="block px-6 py-2 hover:bg-gray-800">Character Leveling</a>
+        <a href="/home/CharacterLeveling" class="block px-6 py-2 hover:bg-gray-800">Character Leveling</a>
       </li>
       <li>
-        <a href="/Rules_Checks" class="block px-6 py-2 hover:bg-gray-800">Checks</a>
+        <a href="/home/Rules_Checks" class="block px-6 py-2 hover:bg-gray-800">Checks</a>
       </li>
       <li>
-        <a href="/Rules_Combat" class="block px-6 py-2 hover:bg-gray-800">Combat</a>
+        <a href="/home/Rules_Combat" class="block px-6 py-2 hover:bg-gray-800">Combat</a>
       </li>
       <li>
-        <a href="/Rules_HealthDamage" class="block px-6 py-2 hover:bg-gray-800">Health/Damage</a>
+        <a href="/home/Rules_HealthDamage" class="block px-6 py-2 hover:bg-gray-800">Health/Damage</a>
       </li>
       <li>
-        <a href="/Rules_Magic" class="block px-6 py-2 hover:bg-gray-800">Magic</a>
+        <a href="/home/Rules_Magic" class="block px-6 py-2 hover:bg-gray-800">Magic</a>
       </li>
       <li>
-        <a href="/Rules_Equipment" class="block px-6 py-2 hover:bg-gray-800">Equipment</a>
+        <a href="/home/Rules_Equipment" class="block px-6 py-2 hover:bg-gray-800">Equipment</a>
       </li>
     </ul>
   </li>
   
   <!-- Dropdown for "Regions" -->
   <li>
-    <a href="/Regions" class="block px-6 py-2 hover:bg-gray-800">Regions</a>
+    <a href="/home/Regions" class="block px-6 py-2 hover:bg-gray-800">Regions</a>
   </li>
   
   
   <!-- Dropdown for "Species" -->
   <li>
-    <a href="/Species" class="block px-6 py-2 hover:bg-gray-800">Species</a>
+    <a href="/home/Species" class="block px-6 py-2 hover:bg-gray-800">Species</a>
   </li>
   
 
@@ -130,34 +130,34 @@ const isStartPage = url.pathname === "/";
     </button>
     <ul id="dropdown-class" class="hidden space-y-2 pl-6">
       <li>
-        <a href="/about" class="block px-6 py-2 hover:bg-gray-800">Scavengers</a>
+        <a href="/home/about" class="block px-6 py-2 hover:bg-gray-800">Scavengers</a>
       </li>
       <li>
-        <a href="/about" class="block px-6 py-2 hover:bg-gray-800">Hunter</a>
+        <a href="/home/about" class="block px-6 py-2 hover:bg-gray-800">Hunter</a>
       </li>
       <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Ranger</a>
+        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Ranger</a>
       </li>
       <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Enchanter</a>
+        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Enchanter</a>
       </li>
       <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Ecotechnicians</a>
+        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Ecotechnicians</a>
       </li>
       <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Public Servants</a>
+        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Public Servants</a>
       </li>
       <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Cloudrunners</a>
+        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Cloudrunners</a>
       </li>
       <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Skycallers</a>
+        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Skycallers</a>
       </li>
       <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Farmers</a>
+        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Farmers</a>
       </li>
       <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Seed Keepers</a>
+        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Seed Keepers</a>
       </li>
     </ul>
   </li>
@@ -173,36 +173,36 @@ const isStartPage = url.pathname === "/";
     </button>
     <ul id="dropdown-campain" class="hidden space-y-2 pl-6">
       <li>
-        <a href="/about" class="block px-6 py-2 hover:bg-gray-800">The Aeolian Archipelago - Campaign</a>
+        <a href=/homeabout" class="block px-6 py-2 hover:bg-gray-800">The Aeolian Archipelago - Campaign</a>
       </li>
       <li>
-        <a href="/about" class="block px-6 py-2 hover:bg-gray-800">Karkorte - Trouble in Karkorte</a>
+        <a href="/home/about" class="block px-6 py-2 hover:bg-gray-800">Karkorte - Trouble in Karkorte</a>
+      </li>
+      <li>/home
+        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Lumea - Save an Aqualumean child</a>
       </li>
       <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Lumea - Save an Aqualumean child</a>
+        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Lumea - Save Astralyss, the kidnapped Celestial Dragon</a>
       </li>
       <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Lumea - Save Astralyss, the kidnapped Celestial Dragon</a>
+        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Lumea - Scientists Divided in Atlantis</a>
       </li>
       <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Lumea - Scientists Divided in Atlantis</a>
+        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Sylvangrove - Session 1: Arborian</a>
       </li>
       <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Sylvangrove - Session 1: Arborian</a>
+        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Sylvangrove - Session 2: Florian</a>
       </li>
       <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Sylvangrove - Session 2: Florian</a>
-      </li>
-      <li>
-        <a href="/play" class="block px-6 py-2 hover:bg-gray-800">Sylvangrove - Session 3: Mycelian</a>
+        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Sylvangrove - Session 3: Mycelian</a>
       </li>
     </ul>
   </li>
   <li>
-    <a href="/gather" class="block px-6 py-2 hover:bg-gray-800">Reference</a>
+    <a href="/home/gather" class="block px-6 py-2 hover:bg-gray-800">Reference</a>
   </li>
   <li>
-    <a href="/social" class="block px-6 py-2 hover:bg-gray-800">About</a>
+    <a href="/home/social" class="block px-6 py-2 hover:bg-gray-800">About</a>
   </li>
 </ul>
 

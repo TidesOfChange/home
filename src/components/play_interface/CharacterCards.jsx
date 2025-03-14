@@ -221,7 +221,7 @@ const CharacterCards = () => {
           <p className="text-center">No characters created yet.</p>
           <button
             className="cursor-pointer mt-4 px-4 py-2 bg-yellow-600 rounded block mx-auto"
-            onClick={() => (window.location.href = "/char_form")}
+            onClick={() => (window.location.href = "/home/char_form")}
           >
             Create Character
           </button>
