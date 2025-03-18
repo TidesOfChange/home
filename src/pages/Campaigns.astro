@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <div class="container mx-auto py-16 px-6">
+    <header class="text-center mb-12">
+      <h1 class="text-5xl font-extrabold text-blue-600">Featured Campaigns</h1>
+      <p class="text-lg text-gray-700 mt-4">Browse through some of the most exciting campaigns we've worked on.</p>
+    </header>
+
+    <!-- Campaign Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+      
+      
+      <div class="group bg-white shadow-2xl rounded-xl overflow-hidden transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+        <img class="w-full h-72 object-cover group-hover:scale-110 transition-all duration-300" src="/images/karkorte/karkote_map.jpg" alt="Campaign 1">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold text-gray-800">Trouble in Karkorte</h3>
+          <p class="text-gray-600 mt-4">Food has always been scarce in Karkorte, and the town has been slowly deteriorating. With increasing amounts of refugees, food has also become ever more scarce. Morale is running low, and everyone is yearning for an end to tough times. In this dark time, the government decided to implement a lottery system to pick citizens and refugees to go out to gather food. </p>
+          <a href="https://tidesofchange.github.io/docs/campaigns/trouble-in-karkorte/scene-1/" class="inline-block mt-6 text-white bg-blue-600 hover:bg-blue-700 py-2 px-6 rounded-lg transition-all duration-300">Learn More</a>
+        </div>
+      </div>
+
+      
+      <div class="group bg-white shadow-2xl rounded-xl overflow-hidden transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+        <img class="w-full h-72 object-cover group-hover:scale-110 transition-all duration-300" src="/images/seed_vault.jpg" alt="Campaign 2">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold text-gray-800">Seed Vault Heist</h3>
+          <p class="text-gray-600 mt-4">An unlikely group of strangers is brought to Grønn Verden because of the stories they’ve been told about this luscious land. However, when they arrive they find the exact opposite. Trying to make the most out of their long journeys they find themselves participating in the town traditions and listening to the tales of one of the village elders when unexpectedly they are tasked with a mission. </p>
+          <a href="https://tidesofchange.github.io/docs/campaigns/seed-vault-heist/intro/" class="inline-block mt-6 text-white bg-blue-600 hover:bg-blue-700 py-2 px-6 rounded-lg transition-all duration-300">Learn More</a>
+        </div>
+      </div>
+
+      
+      <div class="group bg-white shadow-2xl rounded-xl overflow-hidden transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+        <img class="w-full h-72 object-cover group-hover:scale-110 transition-all duration-300" src="/images/sylvangrove/envr1.png" alt="Campaign 3">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold text-gray-800">Roots of Rebellion</h3>
+          <p class="text-gray-600 mt-4">Arborians have probes that can detect threats in their environment This group is closest to the dystopia probes detected threats that the mountain in between them and the dystopia has an overwhelming amount of technology coursing through the sediment breaching into Sylvangrove and means that they only have so much time to band together with the other species to prepare for the Dystopias infiltration</p>
+          <a href="https://tidesofchange.github.io/docs/campaigns/roots-of-rebellion/intro/" class="inline-block mt-6 text-white bg-blue-600 hover:bg-blue-700 py-2 px-6 rounded-lg transition-all duration-300">Learn More</a>
+        </div>
+      </div>
+
+
+      <div class="group bg-white shadow-2xl rounded-xl overflow-hidden transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+        <img class="w-full h-72 object-cover group-hover:scale-110 transition-all duration-300" src="/images/lumea/atlantis.png" alt="Campaign 3">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold text-gray-800">Age of Atlantis</h3>
+          <p class="text-gray-600 mt-4">An Aqualumean village child (Nerathis) has wandered out into the Sludge Swamps chasing after his pet fish. As a result, Nerathis becomes corrupted by both the magic and the natural pollution, turning into a Murk Dweller. His family is determined to cure him, and so that is the mission of the players!</p>
+          <a href="https://tidesofchange.github.io/docs/campaigns/age-of-atlantis/mission-1/" class="inline-block mt-6 text-white bg-blue-600 hover:bg-blue-700 py-2 px-6 rounded-lg transition-all duration-300">Learn More</a>
+        </div>
+      </div>
+
+
+      
+    </div>
+  </div>
+
+</body>
+</html>

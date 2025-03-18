@@ -1,0 +1,114 @@
+---
+import { useEffect } from 'astro/jsx-runtime';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      #map {
+        height: 500px;
+        width: 50%;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Title above the map -->
+    <h1>World Map</h1>
+
+    <!-- Map container -->
+    <div id="map"></div>
+
+    <!-- Button to switch the map image -->
+    <button id="switchMapButton">Switch Map</button>
+
+    <script
+      type="module"
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <script type="module">
+      window.addEventListener('load', () => {
+        const map = L.map('map').setView([0, 0], 1); // Set the map center to (0, 0), zoomed out
+
+        // Set the image bounds for overlay
+        const bounds = [
+          [100, -270], // Top-left corner (latitude, longitude)
+          [-100, 270], // Bottom-right corner (latitude, longitude)
+        ];
+
+        // Image URLs
+        let firstImage = '/images/map1.png'; // First image URL
+        let secondImage = '/images/map2.png'; // Second image URL
+
+        // Initially, display the first image
+        let currentImage = firstImage;
+        
+        // Create the initial image overlay
+        let imageOverlay = L.imageOverlay(currentImage, bounds).addTo(map);
+
+        // Set up the button click event to toggle between images
+        const button = document.getElementById('switchMapButton');
+        button.addEventListener('click', () => {
+          // Remove the current image overlay
+          imageOverlay.remove();
+
+          // Toggle between the two images
+          if (currentImage === firstImage) {
+            currentImage = secondImage; // Switch to the second image
+          } else {
+            currentImage = firstImage; // Switch back to the first image
+          }
+
+          // Add the new image overlay (recreate it)
+          
+          imageOverlay = L.imageOverlay(currentImage, bounds).addTo(map);
+
+        });
+
+        const marker = L.marker([-77, 100]).addTo(map);
+        const marker2 = L.marker([50, 120]).addTo(map);
+        const marker3 = L.marker([-75, -110]).addTo(map);
+        const marker4 = L.marker([60, -120]).addTo(map);
+        marker.bindPopup("<b>Aeolian Archipelago</b><br>Years ago, billions perished during the Crystal Calamity. As the oceans continued to rise rapidly, only those who retreated to the highest mountaintops survived. .");
+        marker2.bindPopup("<b>Karkote</b><br>Karkorte exists in the future after the Crystal Calamity, where attempts at minimizing humanity’s carbon footprint over the centuries exacerbated the existing climate even further. ");
+        marker3.bindPopup("<b>Grønn Verden</b><br>When Farmers and Seed Keepers fled their home after the rising floods ripped through their lands, Grønn Verden became a paradise they were happy to call home, with soil steeped with nutrients and moisture ready for plowing.");
+        marker4.bindPopup("<b>Lumea</b><br>With the threat of the Crystal Calamity, the world underwent a technological boom. Frontier pioneered bubble technology in hopes of kickstarting an underwater society. ");
+
+      });
+    </script>
+  </body>
+</html>
