@@ -42,36 +42,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <h2 class="text-2xl font-semibold mt-10 mb-2">Cybernetics, Tracking & Fear Skills</h2>
 
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-gray-300">
-    <!-- Cybernetics -->
-    <div>
-      <h3 class="text-xl font-semibold mb-1">Cybernetics</h3>
-      <ul class="list-disc list-inside space-y-1">
-        <li>Rank 1: +1 cybernetics check</li>
-        <li>Rank 2: Hack basic locks without checks</li>
-        <li>Rank 3: +3 to recover or decrypt files</li>
-      </ul>
-    </div>
-
-    <!-- Tracking -->
-    <div>
-      <h3 class="text-xl font-semibold mb-1">Tracking</h3>
-      <ul class="list-disc list-inside space-y-1">
-        <li>Rank 1: Know where someone went</li>
-        <li>Rank 2: Track up to a mile</li>
-        <li>Rank 3: Predict next destination</li>
-      </ul>
-    </div>
-
-    <!-- Fear -->
-    <div>
-      <h3 class="text-xl font-semibold mb-1">Fear</h3>
-      <ul class="list-disc list-inside space-y-1">
-        <li>Rank 1: +2 to info-gathering fear checks</li>
-        <li>Rank 2: 1 psychic harm (ignores armor)</li>
-        <li>Rank 3: Add fear mod to attacks</li>
-      </ul>
-    </div>
+  <div class="overflow-x-auto">
+    <table class="min-w-full border border-gray-700 text-left text-gray-300">
+      <thead class="bg-gray-800 text-white">
+        <tr>
+          <th class="px-4 py-2 border border-gray-700">Rank</th>
+          <th class="px-4 py-2 border border-gray-700">Cybernetics</th>
+          <th class="px-4 py-2 border border-gray-700">Tracking</th>
+          <th class="px-4 py-2 border border-gray-700">Fear</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover:bg-gray-800">
+          <td class="px-4 py-2 border border-gray-700">1</td>
+          <td class="px-4 py-2 border border-gray-700">+1 to cybernetics checks</td>
+          <td class="px-4 py-2 border border-gray-700">Can tell which direction someone went</td>
+          <td class="px-4 py-2 border border-gray-700">+2 to fear checks to get information</td>
+        </tr>
+        <tr class="hover:bg-gray-800">
+          <td class="px-4 py-2 border border-gray-700">2</td>
+          <td class="px-4 py-2 border border-gray-700">Hack basic electric locks without a check</td>
+          <td class="px-4 py-2 border border-gray-700">Track up to a mile before losing the trail</td>
+          <td class="px-4 py-2 border border-gray-700">1 psychic harm on successful fear check (bypasses armor)</td>
+        </tr>
+        <tr class="hover:bg-gray-800">
+          <td class="px-4 py-2 border border-gray-700">3</td>
+          <td class="px-4 py-2 border border-gray-700">+3 to recover or decrypt files</td>
+          <td class="px-4 py-2 border border-gray-700">Predict where target is headed</td>
+          <td class="px-4 py-2 border border-gray-700">Add fear modifier to attack rolls</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>
 </BaseLayout>
