@@ -9,36 +9,36 @@ const isStartPage = url.pathname === "/home";
   <head>
     <meta charset="UTF-8" />
     <title>Tides of Change</title>
-    <link rel="stylesheet" href="/home/src/styles/global.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" />
-
   </head>
+
   <body class="bg-gray-900 text-white">
-      <nav class="flex justify-between p-4">
-        <a href="/home" class="text-3xl font-bold font-pirata">
-          Tides of Change
-        </a>
+    <nav class="flex justify-between p-4">
+      <a href="/home" class="text-3xl font-bold">
+        Tides of Change
+      </a>
       <!-- RIGHT SIDE: Optional nav links -->
-        <ul class="flex space-x-4">
-          {!isStartPage && (
-            <li>
-              <a href="/home/char_form" class="px-4 py-2 bg-yellow-500 text-black rounded hover:bg-yellow-700">
-                Character Creation
-              </a>
-            </li>
-          )}
-          {!isStartPage && !isPlayPage && (
+      <ul class="flex space-x-4">
+        { !isStartPage && (
+          <li>
+            <a href="/home/char_form" class="px-4 py-2 bg-yellow-500 text-black rounded hover:bg-yellow-700">
+              Character Creation
+            </a>
+          </li>
+        )}
+        
+        { !isStartPage && !isPlayPage && (
           <li><a href="/home/play_interface" class="px-4 py-2 bg-green-500 text-black rounded hover:bg-green-700">Start/Continue Your Adventure</a></li>
-          )}
-          {isPlayPage && (
-            <li>
-              <a href="/home/dice-roll" class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900">
-                Dice Roll
-              </a>
-            </li>
-          )}
-        </ul>
-      </nav>
+        )}
+        
+        { isPlayPage && (
+          <li>
+            <a href="/home/dice-roll" class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900">
+              Dice Roll
+            </a>
+          </li>
+        )}
+      </ul>
+    </nav>
     
     <!-- MAIN CONTENT -->
     <main>
