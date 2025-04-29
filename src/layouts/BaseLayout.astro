@@ -1,38 +1,24 @@
 ---
 import Footer from '../components/Footer.astro';
-import "../styles/global.css";
 const { url } = Astro;
 const isPlayPage = url.pathname === "/home/play_interface";
 const isStartPage = url.pathname === "/home";
 ---
 
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>ToC Homepage</title>
+    <title>Tides of Change</title>
     <link rel="stylesheet" href="/home/src/styles/global.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" />
 
   </head>
   <body class="bg-gray-900 text-white">
-    <!-- HEADER -->
-    <header class="flex items-center justify-between p-4">
-      <!-- LEFT SIDE: Hamburger button + site title -->
-      <div class="flex items-center">
-        <button
-          id="menu-toggle"
-          class="p-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition mr-4"
-        >
-          &#9776;
-        </button>
+      <nav class="flex justify-between p-4">
         <a href="/home" class="text-3xl font-bold font-pirata">
           Tides of Change
         </a>
-      </div>
-    
       <!-- RIGHT SIDE: Optional nav links -->
-      <nav>
         <ul class="flex space-x-4">
           {!isStartPage && (
             <li>
@@ -51,184 +37,9 @@ const isStartPage = url.pathname === "/home";
               </a>
             </li>
           )}
-          <li><a href="/home/contact" class="hover:text-gray-300">Contact</a></li>
         </ul>
       </nav>
-    </header>
     
-    
-    <!-- SLIDE-OUT SIDEBAR -->
-    <nav
-      id="sidebar-menu"
-      class="fixed top-0 left-0 w-64 h-full overflow-y-auto bg-black transform -translate-x-full transition-transform duration-300 ease-in-out z-50"
-    >
-      <!-- CLOSE BUTTON (top-right inside the sidebar) -->
-      <button
-       id="menu-close"
-        class="absolute top-4 right-4 flex items-center justify-center w-10 h-10 text-2xl text-white bg-transparent rounded-full hover:bg-gray-700 transition duration-200 ease-in-out"
-        >
-        &times;
-      </button>
-
-      
-      <!-- SIDEBAR NAV LINKS -->
-<ul class="pt-20 space-y-4">
-  <li>
-    <a href="/home" class="block px-6 py-2 hover:bg-gray-800">Home</a>
-  </li>
-  
-  <!-- Dropdown for "Rules" -->
-  <li>
-    <button
-      type="button"
-      class="w-full text-left block px-6 py-2 hover:bg-gray-800 flex items-center justify-between"
-      onclick="toggleDropdown('dropdown-rules')"
-    >
-      Rules <span class="ml-2">&#9662;</span>
-    </button>
-    <ul id="dropdown-rules" class="hidden space-y-2 pl-6">
-      <li>
-        <a href="/home/CharacterLeveling" class="block px-6 py-2 hover:bg-gray-800">Character Leveling</a>
-      </li>
-      <li>
-        <a href="/home/Rules_Checks" class="block px-6 py-2 hover:bg-gray-800">Checks</a>
-      </li>
-      <li>
-        <a href="/home/Rules_Combat" class="block px-6 py-2 hover:bg-gray-800">Combat</a>
-      </li>
-      <li>
-        <a href="/home/Rules_HealthDamage" class="block px-6 py-2 hover:bg-gray-800">Health/Damage</a>
-      </li>
-      <li>
-        <a href="/home/Rules_Magic" class="block px-6 py-2 hover:bg-gray-800">Magic</a>
-      </li>
-      <li>
-        <a href="/home/Rules_Equipment" class="block px-6 py-2 hover:bg-gray-800">Equipment</a>
-      </li>
-    </ul>
-  </li>
-  
-  <!-- Dropdown for "Regions" -->
-  <li>
-    <a href="/home/Regions" class="block px-6 py-2 hover:bg-gray-800">Regions</a>
-  </li>
-  
-  
-  <!-- Dropdown for "Species" -->
-  <li>
-    <a href="/home/Species" class="block px-6 py-2 hover:bg-gray-800">Species</a>
-  </li>
-  
-
-  <!-- Dropdown for "Class" -->
-  <li>
-    <button
-      type="button"
-      class="w-full text-left block px-6 py-2 hover:bg-gray-800 flex items-center justify-between"
-      onclick="toggleDropdown('dropdown-class')"
-    >
-      Background <span class="ml-2">&#9662;</span>
-    </button>
-    <ul id="dropdown-class" class="hidden space-y-2 pl-6">
-      <li>
-        <a href="/home/Back_scavengers" class="block px-6 py-2 hover:bg-gray-800">Scavengers</a>
-      </li>
-      <li>
-        <a href="/home/Back_hunter" class="block px-6 py-2 hover:bg-gray-800">Hunter</a>
-      </li>
-      <li>
-        <a href="/home/Back_seed" class="block px-6 py-2 hover:bg-gray-800">Seed Keeper</a>
-      </li>
-      <li>
-        <a href="/home/Back_farmer" class="block px-6 py-2 hover:bg-gray-800">Farmer</a>
-      </li>
-      <li>
-        <a href="/home/Back_eco" class="block px-6 py-2 hover:bg-gray-800">Ecotechnicians</a>
-      </li>
-      <li>
-        <a href="/home/Back_pub" class="block px-6 py-2 hover:bg-gray-800">Public Servants</a>
-      </li>
-      <li>
-        <a href="/home/Back_ranger" class="block px-6 py-2 hover:bg-gray-800">Ranger</a>
-      </li>
-      <li>
-        <a href="/home/Back_enchanter" class="block px-6 py-2 hover:bg-gray-800">Enchanter</a>
-      </li>
-      <li>
-        <a href="/home/Back_cloud" class="block px-6 py-2 hover:bg-gray-800">Cloudrunner</a>
-      </li>
-      <li>
-        <a href="/home/Back_sky" class="block px-6 py-2 hover:bg-gray-800">Skycaller</a>
-      </li>
-      <li>
-        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Buccaneer</a>
-      </li>
-      <li>
-        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Faith Sworn</a>
-      </li>
-      <li>
-        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Warrior</a>
-      </li>
-      <li>
-        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Engineer</a>
-      </li>
-      <li>
-        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Spiritual Resonator</a>
-      </li>
-      <li>
-        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Magi-tech Artificer</a>
-      </li>
-    </ul>
-  </li>
-
-  <!-- Dropdown for "Campains" -->
-  <li>
-    <button
-      type="button"
-      class="w-full text-left block px-6 py-2 hover:bg-gray-800 flex items-center justify-between"
-      onclick="toggleDropdown('dropdown-campain')"
-    >
-      Campains <span class="ml-2">&#9662;</span>
-    </button>
-    <ul id="dropdown-campain" class="hidden space-y-2 pl-6">
-      <li>
-        <a href=/homeabout" class="block px-6 py-2 hover:bg-gray-800">The Aeolian Archipelago - Campaign</a>
-      </li>
-      <li>
-        <a href="/home/about" class="block px-6 py-2 hover:bg-gray-800">Karkorte - Trouble in Karkorte</a>
-      </li>
-      <li>/home
-        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Lumea - Save an Aqualumean child</a>
-      </li>
-      <li>
-        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Lumea - Save Astralyss, the kidnapped Celestial Dragon</a>
-      </li>
-      <li>
-        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Lumea - Scientists Divided in Atlantis</a>
-      </li>
-      <li>
-        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Sylvangrove - Session 1: Arborian</a>
-      </li>
-      <li>
-        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Sylvangrove - Session 2: Florian</a>
-      </li>
-      <li>
-        <a href="/home/play" class="block px-6 py-2 hover:bg-gray-800">Sylvangrove - Session 3: Mycelian</a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="/home/gather" class="block px-6 py-2 hover:bg-gray-800">Reference</a>
-  </li>
-  <li>
-    <a href="/home/social" class="block px-6 py-2 hover:bg-gray-800">About</a>
-  </li>
-</ul>
-
-    </nav>
-
-    
-
     <!-- MAIN CONTENT -->
     <main>
       <slot />
@@ -236,52 +47,5 @@ const isStartPage = url.pathname === "/home";
     
     <!-- FOOTER -->
     <Footer />
-
-
-    <!-- INLINE SCRIPT: Toggle sidebar -->
-    <script>
-      const toggleButton = document.getElementById('menu-toggle');
-      const closeButton = document.getElementById('menu-close');
-      const sidebarMenu = document.getElementById('sidebar-menu');
-      const menuOverlay = document.getElementById('menu-overlay');
-      
-      // Show sidebar & overlay (if it exists)
-      toggleButton.addEventListener('click', () => {
-        sidebarMenu.classList.remove('-translate-x-full');
-        if (menuOverlay) {
-          menuOverlay.classList.remove('hidden');
-        }
-      });
-      
-      // Hide sidebar & overlay (X button)
-      closeButton.addEventListener('click', () => {
-        sidebarMenu.classList.add('-translate-x-full');
-        if (menuOverlay) {
-          menuOverlay.classList.add('hidden');
-        }
-      });
-      
-      // Hide sidebar & overlay (click on overlay)
-      if (menuOverlay) {
-        menuOverlay.addEventListener('click', () => {
-          sidebarMenu.classList.add('-translate-x-full');
-          menuOverlay.classList.add('hidden');
-        });
-      }
-      
-      // Function to toggle dropdown menus in the sidebar
-      function toggleDropdown(id) {
-        const dropdown = document.getElementById(id);
-        if (dropdown) {
-          dropdown.classList.toggle('hidden');
-        }
-      }
-      
-      // Expose the function so inline onclick handlers can access it
-      window.toggleDropdown = toggleDropdown;
-    </script>
-    
-    </script>
-    
   </body>
 </html>
