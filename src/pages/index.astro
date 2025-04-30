@@ -1,23 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/home/Hero.astro';
 ---
 <BaseLayout>
-  <section
-    class="relative flex flex-col items-center justify-center min-h-screen bg-cover bg-center"
-    style="background-image: url();"
-  >
-    <!-- Content goes above the overlay, so give it a higher z-index -->
-    <div class="relative z-10 text-center p-8">
-      <h1 class="text-7xl font-bold mb-4">Embark on Your Adventure</h1>
-      <p class="text-xl mb-8">A journey awaits you in the mysterious realm of possibilities...</p>
-
-      <div class="flex flex-col items-center gap-4">
-        <div class="">
-          <a href="/home/play_interface" class="px-6 py-3 bg-green-500 text-black rounded hover:bg-green-700 transition w-64 text-center">
-            Start Your Adventure
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <Hero />
 </BaseLayout>

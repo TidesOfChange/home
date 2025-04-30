@@ -1,0 +1,34 @@
+---
+const { url } = Astro;
+const isPlayPage = url.pathname === "/home/play_interface";
+const isStartPage = url.pathname === "/home";
+---
+
+<nav class="flex justify-between p-4">
+    <a href="/home" class="text-3xl font-bold">Tides of Change</a>
+    <ul class="flex space-x-4">
+        { !isStartPage && (
+            <li>
+                <a href="/home/char_form" class="px-4 py-2 bg-yellow-500 text-black rounded hover:bg-yellow-700">
+                    Character Creation
+                </a>
+            </li>
+        )}
+        
+        { !isStartPage && !isPlayPage && (
+            <li>
+                <a href="/home/play_interface" class="px-4 py-2 bg-green-500 text-black rounded hover:bg-green-700">
+                    Start/Continue Your Adventure
+                </a>
+            </li>
+        )}
+        
+        { isPlayPage && (
+            <li>
+                <a href="/home/dice-roll" class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900">
+                    Dice Roll
+                </a>
+            </li>
+        )}
+    </ul>
+</nav>
