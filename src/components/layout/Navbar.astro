@@ -1,10 +1,4 @@
----
-const { url } = Astro;
-const isPlayPage = url.pathname === "/home/play_interface";
-const isStartPage = url.pathname === "/home";
----
-
-<div class="navbar bg-base-100 shadow-s sticky top-0 z-50">
+<div id="navbar" class="navbar bg-base-100 shadow-s sticky top-0 z-50 transition-all duration-400 ease-out">
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -13,32 +7,58 @@ const isStartPage = url.pathname === "/home";
       <ul
         tabindex="0"
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <!-- <li><a>Item 1</a></li> -->
+        <li><a>About</a></li>
+        <li><a>Quick Start</a></li>
+        <li>
+          <a>Play</a>
+          <ul class="p-2">
+            <li><a href="character-creator">Create a Character</a></li>
+            <li><a href="play-campaign">Play a Campaign</a></li>
+          </ul>
+        </li>
+        <li><a>Resources</a></li>
       </ul>
     </div>
-    <a class="btn btn-ghost text-2xl" href="/home">Tides of Change</a>
+    <a class="btn btn-ghost text-2xl" href="/">Tides of Change</a>
   </div>
+
   <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
-      <!-- <li><a>Item 1</a></li> -->
+    <ul class="menu menu-horizontal px-1 text-sm">
+      <li><a>About</a></li>
+      <li><a>Quick Start</a></li>
+       <li>
+        <details>
+          <summary>Play</summary>
+          <ul class="p-2 w-50">
+            <li><a href="character-creator">Create a Character</a></li>
+            <li><a href="play-campaign">Play a Campaign</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a>Resources</a></li>
     </ul>
   </div>
   <div class="navbar-end">
-    <ul class="flex space-x-4">
-    { !isStartPage && (
-        <li>
-            <a href="/home/char_form" class="btn btn-primary">
-                Character Creation
-            </a>
-        </li>
-    )}
-    { !isStartPage && !isPlayPage && (
-        <li>
-            <a href="/home/play_interface" class="btn btn-outline">
-                Start/Continue Your Adventure
-            </a>
-        </li>
-    )}
-    </ul>
+    <a href="https://tidesofchange.github.io/docs/" target="_blank" rel="noreferrer">
+      <button class="btn btn-outline">Read the Handbook</button>
+    </a>
   </div>
 </div>
+
+<script>
+  let prevScrollpos = window.pageYOffset;
+  const navbar = document.getElementById('navbar')
+  const dropdown = document.getElementById('play-menu')
+  
+  window.onscroll = function() {
+    if (navbar) {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        navbar.style.top = "0";
+      } else {
+        navbar.style.top = "-70px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  }
+</script>

@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets';
+const {image, title, description, url} = Astro.props;
+---
+
+<div class="card bg-base-100 w-96 h-140 shadow-sm">
+  <figure>
+    <Image
+      src={image}
+      alt={title} />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title justify-center text-2xl">{title}</h2>
+    <p>{description}</p>
+    <div class="card-actions justify-center">
+        <a href={url}>
+            <button class="btn btn-primary">Read More</button>
+        </a>
+    </div>
+  </div>
+</div>
