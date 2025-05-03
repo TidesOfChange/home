@@ -3,17 +3,17 @@ import { Image } from 'astro:assets';
 const {image, title, description, url} = Astro.props;
 ---
 
-<div class="card bg-base-100 min-w-100 max-w-130 lg:w-100 h-130 shadow-sm">
+<div class="card bg-base-100 min-w-84 max-w-130 xl:w-100 h-120 shadow-sm">
   <figure>
     <Image
       src={image}
       alt={title} />
   </figure>
   <div class="card-body">
-    <h2 class="card-title justify-center text-2xl">{title}</h2>
+    <h2 class="card-title justify-center text-2xl lg:text-3xl">{title}</h2>
     <p>{description}</p>
     <div class="card-actions justify-center">
-        <a href={url}>
+        <a href={url} target="_blank" rel="noreferrer">
             <button class="btn btn-primary">Read More</button>
         </a>
     </div>

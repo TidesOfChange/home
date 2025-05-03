@@ -1,4 +1,4 @@
-<div id="navbar" class="navbar bg-base-100 shadow-s sticky top-0 z-50 transition-all duration-400 ease-out">
+<div id="navbar" class="navbar bg-base-100 shadow-s sticky top-0 z-50 transition-all duration-600 ease-in-out">
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -6,7 +6,9 @@
       </div>
       <ul
         tabindex="0"
-        class="menu menu-md dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        id="dropdown"
+        class="menu menu-lg dropdown-content bg-base-100 z-1 mt-3 w-screen p-2 -left-2 overflow-x-hidden shadow-lg"> 
+        <li><a href="/">Home</a></li>
         <li><a>About</a></li>
         <li><a>Quick Start</a></li>
         <li>
@@ -48,17 +50,18 @@
 <script>
   let prevScrollpos = window.pageYOffset;
   const navbar = document.getElementById('navbar')
-  const dropdown = document.getElementById('play-menu')
+  const dropdown = document.getElementById('dropdown')
   
   window.onscroll = function() {
-    if (navbar) {
-      let currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
-        navbar.style.top = "0";
-      } else {
-        navbar.style.top = "-80px";
-      }
-      prevScrollpos = currentScrollPos;
+    if (!navbar || !dropdown) {
+      return;
     }
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      navbar.style.top = "0";
+    } else {
+      navbar.style.top = "-400px";
+    }
+    prevScrollpos = currentScrollPos;
   }
 </script>

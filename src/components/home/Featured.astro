@@ -2,18 +2,38 @@
 import placeholder from '../../images/placeholder.svg';
 import Card from "../layout/Card.astro"
 ---
-
-<div class="hero bg-base-200 min-h-[70vh] overflow-hidden">
-  <div class="hero-content flex-col-reverse lg:flex-row">
-    <div>
-      <h2 class="text-4xl font-bold mb-6">Explore the World</h2>
-      <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-        <Card image={placeholder} title="Title 1" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." url="" />
-        <Card image={placeholder} title="Title 2" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." url="" />
-        <Card image={placeholder} title="Title 3" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." url="" />
+<div class="bg-base-200 py-8 lg:py-20">
+  <div class="hero">
+    <div class="hero-content">
+      <h2 class="text-4xl font-bold">Explore the World</h2>
+    </div>   
+  </div>
+  <div class="hero bg-base-200 pb-4 overflow-hidden sm:overflow-x-scroll xl:overflow-hidden">
+    <div class="hero-content">
+      <div>
+        <div class="flex flex-col md:flex-row gap-4">
+          <Card 
+            image={placeholder} 
+            title="Title 1" 
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." 
+            url="" />
+          <Card 
+            image={placeholder} 
+            title="Title 2" 
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." 
+            url="" />
+          <Card 
+            image={placeholder} 
+            title="Title 3" 
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." 
+            url="" />
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
 
 

@@ -3,16 +3,16 @@ import { Image } from 'astro:assets';
 import placeholder from '../../images/placeholder.svg';
 ---
 
-<div class="hero bg-base-200 min-h-[70vh] lg:h-[70vh]">
+<div class="hero bg-base-200 min-h-[70vh] lg:h-[70vh] py-4 lg:py-0">
   <div class="hero-content flex-col-reverse lg:flex-row">
-    <Image src={placeholder} alt="" class="max-w-xs xs:max-w-sm sm:max-w-lg lg:max-w-xl rounded-lg shadow-xl" />
+    <Image src={placeholder} alt="" class="w-full max-w-xl lg:max-w-lg xl:max-w-xl rounded-lg shadow-xl" />
     <div>
       <h2 class="text-4xl font-bold">An exciting journey awaits you</h2>
-      <p class="py-4">
+      <p class="py-4 lg:text-lg">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
       </p>
-      <p>
+      <p class="lg:text-lg">
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>

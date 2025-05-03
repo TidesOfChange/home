@@ -3,17 +3,17 @@ import { Image } from 'astro:assets';
 import placeholder from '../../images/placeholder.svg';
 ---
 
-<div class="hero bg-base-200 min-h-[70vh] lg:h-[70vh]">
+<div class="hero bg-base-200 min-h-[70vh] lg:h-[70vh] py-4 lg:py-0">
   <div class="hero-content flex-col-reverse lg:flex-row-reverse">
-    <Image src={placeholder} alt="" class="max-w-xs xs:max-w-sm sm:max-w-lg lg:max-w-xl rounded-lg shadow-xl" />
+    <Image src={placeholder} alt="" class="w-full max-w-xl lg:max-w-lg xl:max-w-xl rounded-lg shadow-xl" />
     <div>
-      <h2 class="text-4xl font-bold">It is many years into Earth’s future</h2>
-      <p class="py-4">
+      <h2 class="text-4xl font-bold">Many years into Earth’s future</h2>
+      <p class="py-4 lg:text-lg">
         Rising sea levels have submerged much of the planet, and many of the remaining land masses suffer from pollution and diminishing resources. 
         As the planet rapidly changed the past millennia, so too did its inhabitants. Humans as we think of them today have become a minority on the planet they once dominated. 
         In their stead, myriad new species have evolved to adapt to this ever changing environment. 
       </p>
-      <p>
+      <p class="lg:text-lg">
         Survival is the name of the game for most civilizations, each experiencing unique challenges (as well as unique joys!). 
         But can these civilizations learn to start working with each other towards a world that allows for more than just day-to-day survival? 
         Can they ride the tides of change into a better future, or will they drown?     
