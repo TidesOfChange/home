@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+import placeholder from '../../images/placeholder.svg';
+---
+
+<div class="hero bg-base-200 min-h-[70vh] lg:h-[70vh] py-4 lg:py-0">
+  <div class="hero-content flex-col-reverse lg:flex-row-reverse">
+    <Image src={placeholder} alt="" class="w-full max-w-xl lg:max-w-lg xl:max-w-xl rounded-lg shadow-xl" />
+    <div>
+      <div class="grid grid-cols-1 gap-4">
+        <h2 class="text-4xl font-bold">Chart Your Course</h2>
+        <p class="text-lg">Build your survivor and track their evolving story with digital tools designed for the world of Tides of Change.</p>
+        <div class="card bg-base-100 card-lg shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title">Character Creator</h2>
+                <p>
+                    <strong>Bring your adventurer to life.</strong>
+                    Use the Character Creator to build a custom persona for your journey through the world of Tides of Change. 
+                    Choose your background, traits, and abilities, and generate a character sheet ready for play.
+                </p>
+                <div class="justify-center card-actions mt-2">
+                    <a href="character-creator">
+                        <button class="btn btn-primary">Create a Character</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+      <div class="card bg-base-100 card-lg shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title">Adventure Journal</h2>
+                <p>
+                    <strong>Stay on course as the tides shift.</strong>
+                    The Adventure Journal helps you log your party’s progress, major choices, and evolving world state. 
+                    Use it to document your story, manage ongoing quests, and track how your world adapts over time.
+                </p>
+                <div class="justify-center card-actions mt-2">
+                    <a href="adventure-journal">
+                        <button class="btn btn-primary">Log Your Adventure</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
