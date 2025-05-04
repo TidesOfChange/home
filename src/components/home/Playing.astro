@@ -1,21 +1,21 @@
 ---
 import { Image } from 'astro:assets';
-import placeholder from '../../images/placeholder.svg';
+import kraken from '../../images/home/kraken.webp';
 ---
 
-<div class="hero bg-base-200 min-h-[70vh] lg:h-[70vh] py-4 lg:py-0">
+<div class="hero bg-base-200 min-h-[40vh] py-4 lg:py-0">
   <div class="hero-content flex-col-reverse lg:flex-row">
-    <Image src={placeholder} alt="" class="w-full max-w-xl lg:max-w-lg xl:max-w-xl rounded-lg shadow-xl" />
-    <div>
-      <h2 class="text-4xl font-bold">An exciting journey awaits you</h2>
-      <p class="py-4 lg:text-lg">
-        Step into a world transformed by centuries of rising tides and environmental collapse, where every island, ruin, and faction carries the weight of history. 
+    <Image src={kraken} alt="Karkorte Kraken" class="w-full max-w-2xl lg:max-w-xl xl:max-w-2xl" />
+    <div class="sm:px-10 lg:px-0">
+      <h2 class="text-2xl sm:text-3xl xl:text-4xl font-bold">An Exciting Journey Awaits</h2>
+      <p class="py-4 xl:text-lg">
+        <strong>Step into a world transformed by centuries of rising tides and environmental collapse,</strong> where every island, ruin, and faction carries the weight of history. 
         Life has endured through adaptation, innovation, and the sheer will to survive. 
         Civilizations clash and cooperate, shaped by scarcity, evolving values, and the memory of what was lost.
       </p>
-      <p class="lg:text-lg">
-        You may uncover remnants of ancient technologies, encounter species that have adapted in unexpected ways, or stand at the center of conflicts that could decide the fate of entire regions. 
-        The world is rich with mystery, layered with political and ecological tension, and always on the brink of change.
+      <p class="xl:text-lg">
+        <strong>Uncover the remnants of ancient technologies,</strong> encounter species that have adapted in extraordinary ways, and find yourself at the heart of conflicts that shape the fate of entire regions.
+        The world of <strong>Tides of Change</strong> is steeped in mystery, ecological tension, and political intrigue, and it is <em>always on the brink of change</em>.
       </p>
     </div>
   </div>
