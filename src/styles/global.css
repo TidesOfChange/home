@@ -1,4 +1,5 @@
 @import '@fontsource/cinzel';
+@import '@fontsource/cinzel-decorative/700';
 @import '@fontsource/lora';
 @import 'tailwindcss';
 @plugin 'daisyui' {
@@ -61,7 +62,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.btn {
     font-family: 'Cinzel', serif;
 }
 
@@ -69,7 +71,6 @@ html {
     font-family: 'Lora', serif;
 }
 
-.logo,
-.btn {
-    font-family: 'Cinzel', serif;
+.logo {
+    font-family: 'Cinzel Decorative', system-ui;
 }
