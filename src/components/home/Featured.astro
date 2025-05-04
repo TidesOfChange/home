@@ -1,11 +1,16 @@
 ---
-import placeholder from '../../images/placeholder.svg';
+import ironwood from '../../images/featured/ironwood.webp'
+import gronnVerden from '../../images/featured/gronn-verden.webp'
+import karkorte from '../../images/featured/karkorte.webp';
 import Card from "../layout/Card.astro"
 ---
 <div class="bg-base-200 py-8 lg:py-20">
   <div class="hero">
-    <div class="hero-content">
+    <div class="hero-content flex-col">
       <h2 class="text-4xl font-bold">Explore the World</h2>
+      <p class="text-center max-w-4xl text-lg">
+        Start your journey with a collection of campaigns available in the online handbook. 
+        Explore strange worlds, face unfolding mysteries, and share unforgettable adventures with your crew.</p>
     </div>   
   </div>
   <div class="hero bg-base-200 pb-4 overflow-hidden sm:overflow-x-scroll xl:overflow-hidden">
@@ -13,20 +18,20 @@ import Card from "../layout/Card.astro"
       <div>
         <div class="flex flex-col md:flex-row gap-4">
           <Card 
-            image={placeholder} 
-            title="Title 1" 
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." 
-            url="" />
+            image={ironwood} 
+            title="Veltharion’s Quest"
+            description="Over drinks and old stories, Ironwood’s tavern keeper Edward Earl reveals mysteries of the vanished skycaller Veltharion. Following her path means braving storm-wracked isles, lost secrets, and a fate none have returned to tell." 
+            url="https://tidesofchange.github.io/docs/campaigns/veltharions-quest/intro/" />
           <Card 
-            image={placeholder} 
-            title="Title 2" 
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." 
-            url="" />
+            image={gronnVerden} 
+            title="Seed Vault Heist" 
+            description="With nothing but old stories and stubborn hope, Elder Ernest Elderberry rallies support for a daring mission to reclaim ancient seeds from the guarded depths of the Seed Vault before Frontier locks them away forever." 
+            url="https://tidesofchange.github.io/docs/campaigns/seed-vault-heist/intro/" />
           <Card 
-            image={placeholder} 
-            title="Title 3" 
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." 
-            url="" />
+            image={karkorte} 
+            title="Trouble in Karkorte" 
+            description="As food grows scarce and the tide turns strange, Karkorte draws lots to send a team beyond the bubble. What begins as a simple scavenging run quickly unravels into a descent through irradiated ruins and forgotten horrors." 
+            url="https://tidesofchange.github.io/docs/campaigns/trouble-in-karkorte/scene-1/" />
         </div>
       </div>
     </div>

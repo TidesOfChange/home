@@ -4,6 +4,57 @@
 @plugin 'daisyui' {
     themes: wireframe --default;
 }
+@plugin "daisyui/theme" {
+    name: 'tidesofchange';
+    default: true;
+    prefersdark: false;
+    color-scheme: light;
+
+    --color-base-100: oklch(0.97 0.0139 88.68);
+    --color-base-200: oklch(0.93 0.0153 90.24);
+    --color-base-300: oklch(0.88 0.0254 81.12);
+    --color-base-content: oklch(0.2 0.0254 81.12);
+
+    --color-primary: oklch(60% 0.2 200);
+    --color-primary-content: oklch(98% 0.01 200);
+
+    --color-secondary: oklch(75% 0.15 180);
+    --color-secondary-content: oklch(20% 0.02 180);
+
+    --color-accent: oklch(45% 0.04 30);
+    --color-accent-content: oklch(95% 0.01 30);
+
+    --color-neutral: oklch(0.14 0.0254 81.12);
+    --color-neutral-content: oklch(98% 0.003 247.858);
+
+    --color-info: oklch(80% 0.14 240);
+    --color-info-content: oklch(20% 0.02 240);
+
+    --color-success: oklch(75% 0.2 140);
+    --color-success-content: oklch(15% 0.02 140);
+
+    --color-warning: oklch(85% 0.2 100);
+    --color-warning-content: oklch(30% 0.02 100);
+
+    --color-error: oklch(70% 0.25 30);
+    --color-error-content: oklch(98% 0.01 30);
+
+    /* border radius */
+    --radius-selector: 1rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.5rem;
+
+    /* base sizes */
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+
+    /* border size */
+    --border: 1px;
+
+    /* effects */
+    --depth: 1;
+    --noise: 0;
+}
 
 h1,
 h2,
@@ -18,6 +69,7 @@ html {
     font-family: 'Lora', serif;
 }
 
-#logo {
+#logo,
+.btn {
     font-family: 'Cinzel', serif;
 }
