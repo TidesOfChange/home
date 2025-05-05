@@ -95,6 +95,8 @@ const backgrounds = [
   { name: "Merchant", description: "Master of trade and negotiation." },
 ];
 
+
+// Character form with no skip and 12 attributes
 const CharacterForm = () => {
   const [step, setStep] = useState(1);
   const [character, setCharacter] = useState({
