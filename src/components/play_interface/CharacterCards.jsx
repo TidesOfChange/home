@@ -246,17 +246,17 @@ const CharacterCards = () => {
                     )}
                 </>
             ) : (
-                <>
+                <div class="flex flex-col px-4">
                     <p class="text-center">No characters created yet.</p>
                     <button
-                        class="btn btn-primary"
+                        class="btn btn-primary mt-4"
                         onClick={() =>
                             (window.location.href = 'character-creator')
                         }
                     >
                         Create Character
                     </button>
-                </>
+                </div>
             )}
         </div>
     );
