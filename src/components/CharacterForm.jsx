@@ -122,22 +122,21 @@ const CharacterForm = () => {
 
   const nextStep = () => {
     if (step === 1 && !character.species) {
-      alert("Please select a species first, or skip this step.");
+      alert("Please select a species");
       return;
     }
     if (step === 2 && !character.class) {
-      alert("Please select a class first, or skip this step.");
+      alert("Please select a class");
       return;
     }
     if (step === 3 && !character.background) {
-      alert("Please select a background first, or skip this step.");
+      alert("Please select a background");
       return;
     }
     setStep((prev) => prev + 1);
   };
 
   const prevStep = () => setStep(step - 1);
-  const skipStep = () => setStep(step + 1);
 
   const saveCharacter = () => {
     const characters = JSON.parse(localStorage.getItem("characters")) || [];
@@ -175,8 +174,8 @@ const CharacterForm = () => {
       character.stats[stat] +
       value;
 
-    if (total > 15) {
-      alert("Total stats cannot exceed 15.");
+    if (total > 12) {
+      alert("Total stats cannot exceed 12.");
       return;
     }
 
@@ -273,7 +272,7 @@ const CharacterForm = () => {
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">Assign Stats</h2>
           <p className="text-gray-400 mb-4">
-            Distribute 30 points among the stats.
+            Distribute 12 points among the stats.
           </p>
           <div className="flex flex-col items-center gap-4">
             {Object.keys(character.stats).map((stat) => (
@@ -355,12 +354,6 @@ const CharacterForm = () => {
               style={{ marginRight: "10px" }}
             >
               Next
-            </button>
-            <button
-              onClick={skipStep}
-              className="absolute bottom-6 right-6 cursor-pointer hover:underline px-4 py-2 bg-gray-700 text-white rounded"
-            >
-              Skip
             </button>
           </>
         ) : (
