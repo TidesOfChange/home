@@ -143,7 +143,7 @@ const CharacterForm = () => {
         const characters = JSON.parse(localStorage.getItem('characters')) || [];
         characters.push(character);
         localStorage.setItem('characters', JSON.stringify(characters));
-        window.location.href = '/adventure-journal';
+        window.location.href = '/home/adventure-journal';
     };
 
     const exportToJSON = () => {
