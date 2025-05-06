@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+import tundraisles from '../../images/home/tundraisles.webp';
+---
+
+<div class="hero bg-base-200 min-h-[40vh] py-4 lg:py-0">
+  <div class="hero-content flex-col-reverse lg:flex-row-reverse gap-8 md:gap-0">
+    <Image src={tundraisles} alt="Map of the Tundra Isles" class="w-full max-w-3xl lg:max-w-2xl xl:max-w-3xl" />
+    <div class="sm:px-10 lg:px-0">
+      <div class="grid grid-cols-1 gap-4">
+        <h2 class="text-2xl sm:text-3xl xl:text-4xl font-bold">Chart Your Course</h2>
+        <p class="xl:text-lg">Build your character and track their story with digital tools designed for the world of <strong>Tides of Change</strong>.</p>
+        <div class="card bg-base-100 shadow-md">
+            <div class="card-body">
+                <h2 class="card-title">Character Creator</h2>
+                <p>
+                    <strong>Bring your adventurer to life.</strong>
+                    Use the Character Creator to build a custom persona for your journey through the world of Tides of Change. 
+                    Choose your background, traits, and abilities, and generate a character sheet ready for play.
+                </p>
+                <div class="justify-center card-actions mt-4">
+                    <a role="button" class="btn btn-primary" href="character-creator">
+                        Create a Character
+                    </a>
+                </div>
+            </div>
+        </div>
+      <div class="card bg-base-100 shadow-md">
+            <div class="card-body">
+                <h2 class="card-title">Adventure Journal</h2>
+                <p>
+                    <strong>Stay on course as the tides shift.</strong>
+                    The Adventure Journal helps you log your party’s progress, major choices, and evolving world state. 
+                    Use it to document your story, manage ongoing quests, and track how your world adapts over time.
+                </p>
+                <div class="justify-center card-actions mt-4">
+                    <a role="button" class="btn btn-primary" href="adventure-journal">
+                        Log Your Adventure
+                    </a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

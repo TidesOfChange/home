@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import kraken from '../../images/home/kraken.webp';
+---
+
+<div class="hero bg-base-200 min-h-[40vh] py-4 lg:py-0">
+  <div class="hero-content flex-col-reverse lg:flex-row">
+    <Image src={kraken} alt="Karkorte Kraken" class="w-full max-w-2xl lg:max-w-xl xl:max-w-2xl" />
+    <div class="sm:px-10 lg:px-0">
+      <h2 class="text-2xl sm:text-3xl xl:text-4xl font-bold">An Exciting Journey Awaits</h2>
+      <p class="py-4 xl:text-lg">
+        <strong>Step into a world transformed by centuries of rising tides and environmental collapse,</strong> where every island, ruin, and faction carries the weight of history. 
+        Life has endured through adaptation, innovation, and the sheer will to survive. 
+        Civilizations clash and cooperate, shaped by scarcity, evolving values, and the memory of what was lost.
+      </p>
+      <p class="xl:text-lg">
+        <strong>Uncover the remnants of ancient technologies,</strong> encounter species that have adapted in extraordinary ways, and find yourself at the heart of conflicts that shape the fate of entire regions.
+        The world of <strong>Tides of Change</strong> is steeped in mystery, ecological tension, and political intrigue, and it is <em>always on the brink of change</em>.
+      </p>
+    </div>
+  </div>
+</div>

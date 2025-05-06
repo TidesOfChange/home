@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CharacterCards from "../components/play_interface/CharacterCards.jsx";
+import NotesEquipment from "../components/play_interface/NotesEquipment.jsx";
+import StatsCurrency from "../components/play_interface/StatsCurrency.jsx";
+---
+<BaseLayout>
+    <div class="flex h-screen bg-base-200">
+        <CharacterCards client:load />
+        <NotesEquipment client:load />
+        <StatsCurrency client:load />
+    </div>
+</BaseLayout>

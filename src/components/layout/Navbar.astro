@@ -1,0 +1,70 @@
+<div id="navbar" class="navbar bg-base-100 shadow-lg sticky top-0 z-50 transition-all duration-600 ease-in-out">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="0"
+        id="dropdown"
+        class="menu menu-lg dropdown-content bg-base-100 z-1 mt-3 w-screen p-2 -left-2 overflow-x-hidden shadow-lg"> 
+        <li><a href="/">Home</a></li>
+        <li><a>About</a></li>
+        <li><a>Quick Start</a></li>
+        <li>
+          <a>Play</a>
+          <ul class="p-2">
+            <li><a href="character-creator">Create a Character</a></li>
+            <li><a href="adventure-journal">Track an Adventure</a></li>
+          </ul>
+        </li>
+        <li><a>Resources</a></li>
+      </ul>
+    </div>
+    <a class="logo shrink-0 text-xl lg:text-2xl lg:pl-4" href="/">Tides of Change</a>
+  </div>
+
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1 text-lg">
+      <li><a>About</a></li>
+      <li><a>Quick Start</a></li>
+       <li>
+        <details>
+          <summary>Play</summary>
+          <ul class="p-2 w-52 shadow-lg rounded-t-none">
+            <li><a href="character-creator" aria-label="Create a Character">Create a Character</a></li>
+            <li><a href="adventure-journal" aria-label="Track an Adventure">Track an Adventure</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a>Resources</a></li>
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <a role="button" class="btn btn-soft sm:btn-sm lg:btn-md hidden sm:flex" href="https://tidesofchange.github.io/docs/" target="_blank" rel="noreferrer">
+      Read the Handbook
+    </a>
+    <a role="button" class="btn btn-soft btn-sm sm:hidden" href="https://tidesofchange.github.io/docs/" target="_blank" rel="noreferrer">
+      Handbook
+    </a>
+  </div>
+</div>
+
+<script>
+  let prevScrollpos = window.pageYOffset;
+  const navbar = document.getElementById('navbar')
+  const dropdown = document.getElementById('dropdown')
+  
+  window.onscroll = function() {
+    if (!navbar || !dropdown) {
+      return;
+    }
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      navbar.style.top = "0";
+    } else {
+      navbar.style.top = "-400px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+</script>
