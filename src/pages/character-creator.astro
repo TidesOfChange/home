@@ -4,7 +4,7 @@ import CharacterForm from "../components/CharacterForm.jsx";
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout>
-  <section class="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white p-8">
+  <section class="min-h-screen flex flex-col items-center justify-center bg-base-200">
     
     <h1 class="text-4xl font-bold mb-4">{title}</h1>
 
@@ -15,13 +15,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <!-- Step Progress -->
     <div class="justify-center space-x-4 text-lg font-semibold mb-6">
-      <span class="text-white rounded">1. Species</span> →
-      <span class="text-white rounded">2. Class</span> →
-      <span class="text-white rounded">3. Background</span> →
-      <span class="text-white rounded">4. Stats</span> →
-      <span class="text-white rounded">5. Finalize</span>
+      <span class="rounded">1. Species</span> →
+      <span class="rounded">2. Class</span> →
+      <span class="rounded">3. Background</span> →
+      <span class="rounded">4. Stats</span> →
+      <span class="rounded">5. Finalize</span>
     </div>
-      <CharacterForm client:load />
-
+    <CharacterForm client:load />
   </section>
 </BaseLayout>
