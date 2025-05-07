@@ -10,7 +10,7 @@ const {image, title, description, url} = Astro.props;
       alt={title} />
   </figure>
   <div class="card-body">
-    <h2 class="card-title justify-center text-2xl xl:text-3xl">{title}</h2>
+    <h2 class="card-title justify-center text-2xl">{title}</h2>
     <p>{description}</p>
     <div class="card-actions justify-center">
         <a role="button" class="btn btn-primary" href={url} target="_blank" rel="noreferrer">
