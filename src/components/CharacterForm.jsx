@@ -147,7 +147,7 @@ const CharacterForm = () => {
     };
 
     const exportToJSON = () => {
-        const jsonData = JSON.stringify(character, null, 2);
+        const jsonData = JSON.stringify([character], null, 2);
         const blob = new Blob([jsonData], { type: 'application/json' });
         saveAs(blob, 'character.json');
     };

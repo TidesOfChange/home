@@ -84,7 +84,6 @@ const CharacterCards = () => {
         const width = parseFloat(panelWidth);
         return width > 30 ? 'grid-cols-2' : 'grid-cols-1';
     };
-
     return (
         <div
             ref={panelRef}
@@ -256,7 +255,18 @@ const CharacterCards = () => {
                     >
                         Create Character
                     </button>
+                    <label for="file-upload" class="btn btn-primary mt-4">
+                      Upload Character JSON file
+                    </label>
+                    <input
+                      type="file"
+                      id="file-upload"
+                      accept="application/json"
+                      onChange={importCharacters}
+                      style={{ display: 'none' }}
+                    />
                 </div>
+
             )}
         </div>
     );
