@@ -56,8 +56,9 @@ const CharacterCards = () => {
         const reader = new FileReader();
         reader.onload = (e) => {
             const data = JSON.parse(e.target.result);
-            setCharacters(data);
-            localStorage.setItem('characters', JSON.stringify(data));
+            const updatedCharacters = [...characters, ...data]
+            setCharacters(updatedCharacters);
+            localStorage.setItem('characters', JSON.stringify(updatedCharacters));
         };
         reader.readAsText(file);
     };
@@ -79,11 +80,7 @@ const CharacterCards = () => {
         document.removeEventListener('mousemove', handleMouseMove);
         document.removeEventListener('mouseup', handleMouseUp);
     };
-
-    const getColumnClass = () => {
-        const width = parseFloat(panelWidth);
-        return width > 30 ? 'grid-cols-2' : 'grid-cols-1';
-    };
+    
     return (
         <div
             ref={panelRef}
@@ -97,177 +94,177 @@ const CharacterCards = () => {
                 class="absolute top-0 right-0 h-full w-2 bg-base-300 cursor-ew-resize"
                 onMouseDown={handleMouseDown}
                 style={{ zIndex: 10 }}
-            ></div>
-
-            {characters.length > 0 ? (
-                <>
-                    {/* Scrollable Character Grid */}
-                    <div class="h-full overflow-y-auto scrollbar-hide px-4">
-                        <div class={`grid ${getColumnClass()} gap-4`}>
-                            {characters.map((char, index) => (
-                                <div
-                                    key={index}
-                                    class="p-3 rounded shadow-lg relative"
+            >
+            </div>
+            {/* Scrollable Character Grid */}
+            <div class="overflow-y-auto scrollbar-hide px-4">
+                <div class={`grid grid-cols-1 gap-4`}>
+                    {characters.length <= 0 && (
+                        <p class="text-center">You don't have any characters yet.</p>
+                    )}
+                    {characters.map((char, index) => (
+                        <div
+                            key={index}
+                            class="p-3 rounded shadow-lg relative"
+                        >
+                            <div class="flex justify-between">
+                                {/* 🔹 Toggle Between Species or Class Image (Per Character) */}
+                                <button
+                                    onClick={() =>
+                                        updateCharacter(
+                                            index,
+                                            'showSpeciesImage',
+                                            !char.showSpeciesImage
+                                        )
+                                    }
+                                    class="btn btn-soft mb-2"
                                 >
-                                    <div class="flex justify-between">
-                                        {/* 🔹 Toggle Between Species or Class Image (Per Character) */}
-                                        <button
-                                            onClick={() =>
+                                    {char.showSpeciesImage
+                                        ? 'Show Class Image'
+                                        : 'Show Species Image'}
+                                </button>
+
+                                {/* Delete Character Button */}
+                                <button
+                                    onClick={() =>
+                                        setConfirmDelete(index)
+                                    }
+                                    class="btn btn-soft btn-square"
+                                >
+                                    ✖
+                                </button>
+                            </div>
+
+                            {/* 🔹 Character Image (Species OR Class based on toggle) */}
+                            <img
+                                src={
+                                    char.showSpeciesImage
+                                        ? char.species_image
+                                        : char.class_image
+                                }
+                                alt="Character"
+                                class="w-full h-32 object-cover rounded bg-base-300"
+                            />
+
+                            {/* Editable Name Input */}
+                            <input
+                                type="text"
+                                class="input w-full"
+                                value={char.name}
+                                onChange={(e) =>
+                                    updateCharacter(
+                                        index,
+                                        'name',
+                                        e.target.value
+                                    )
+                                }
+                                placeholder="Character Name"
+                            />
+
+                            {/* Class & Species Labels */}
+                            <p class="text-sm">
+                                Species: {char.species}
+                            </p>
+                            <p class="text-sm">Class: {char.class}</p>
+
+                            {/* Editable Stats */}
+                            <div class="mt-2">
+                                {Object.keys(char.stats).map((stat) => (
+                                    <div
+                                        key={stat}
+                                        class="flex justify-between items-center bg-base-100 p-1 rounded text-sm mt-1"
+                                        style={{ width: '100%' }} // Ensures full-width inside the card
+                                    >
+                                        <label class="w-1/2 text-left pl-2">
+                                            {stat}:
+                                        </label>
+                                        <input
+                                            type="number"
+                                            class="w-1/2 input input-sm text-center"
+                                            value={char.stats[stat]}
+                                            onChange={(e) =>
                                                 updateCharacter(
                                                     index,
-                                                    'showSpeciesImage',
-                                                    !char.showSpeciesImage
+                                                    stat,
+                                                    e.target.value
                                                 )
                                             }
-                                            class="btn btn-soft mb-2"
-                                        >
-                                            {char.showSpeciesImage
-                                                ? 'Show Class Image'
-                                                : 'Show Species Image'}
-                                        </button>
-
-                                        {/* Delete Character Button */}
-                                        <button
-                                            onClick={() =>
-                                                setConfirmDelete(index)
-                                            }
-                                            class="btn btn-soft btn-square"
-                                        >
-                                            ✖
-                                        </button>
+                                            min="0"
+                                        />
                                     </div>
+                                ))}
+                            </div>
 
-                                    {/* 🔹 Character Image (Species OR Class based on toggle) */}
-                                    <img
-                                        src={
-                                            char.showSpeciesImage
-                                                ? char.species_image
-                                                : char.class_image
-                                        }
-                                        alt="Character"
-                                        class="w-full h-32 object-cover rounded bg-base-300"
-                                    />
+                            {/* Editable Description */}
+                            <textarea
+                                class="w-full textarea mt-2"
+                                rows="2"
+                                value={char.description}
+                                onChange={(e) =>
+                                    updateCharacter(
+                                        index,
+                                        'description',
+                                        e.target.value
+                                    )
+                                }
+                                placeholder="Character Description"
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
 
-                                    {/* Editable Name Input */}
-                                    <input
-                                        type="text"
-                                        class="input w-full"
-                                        value={char.name}
-                                        onChange={(e) =>
-                                            updateCharacter(
-                                                index,
-                                                'name',
-                                                e.target.value
-                                            )
-                                        }
-                                        placeholder="Character Name"
-                                    />
-
-                                    {/* Class & Species Labels */}
-                                    <p class="text-sm">
-                                        Species: {char.species}
-                                    </p>
-                                    <p class="text-sm">Class: {char.class}</p>
-
-                                    {/* Editable Stats */}
-                                    <div class="mt-2">
-                                        {Object.keys(char.stats).map((stat) => (
-                                            <div
-                                                key={stat}
-                                                class="flex justify-between items-center bg-base-100 p-1 rounded text-sm mt-1"
-                                                style={{ width: '100%' }} // Ensures full-width inside the card
-                                            >
-                                                <label class="w-1/2 text-left pl-2">
-                                                    {stat}:
-                                                </label>
-                                                <input
-                                                    type="number"
-                                                    class="w-1/2 input input-sm text-center"
-                                                    value={char.stats[stat]}
-                                                    onChange={(e) =>
-                                                        updateCharacter(
-                                                            index,
-                                                            stat,
-                                                            e.target.value
-                                                        )
-                                                    }
-                                                    min="0"
-                                                />
-                                            </div>
-                                        ))}
-                                    </div>
-
-                                    {/* Editable Description */}
-                                    <textarea
-                                        class="w-full textarea mt-2"
-                                        rows="2"
-                                        value={char.description}
-                                        onChange={(e) =>
-                                            updateCharacter(
-                                                index,
-                                                'description',
-                                                e.target.value
-                                            )
-                                        }
-                                        placeholder="Character Description"
-                                    />
-                                </div>
-                            ))}
+            {/* Delete Confirmation Popup */}
+            {confirmDelete !== null && (
+                <div class="absolute inset-0 flex justify-center items-center">
+                    <div class="bg-base-100 p-6 rounded-lg text-center shadow-xl">
+                        <p class="text-lg mb-4">
+                            Are you sure you want to delete this
+                            character?
+                        </p>
+                        <div class="flex justify-center gap-2">
+                            <button
+                                onClick={() =>
+                                    deleteCharacter(confirmDelete)
+                                }
+                                class="btn btn-primary"
+                            >
+                                Yes, Delete
+                            </button>
+                            <button
+                                onClick={() => setConfirmDelete(null)}
+                                class="btn btn-soft"
+                            >
+                                Cancel
+                            </button>
                         </div>
                     </div>
-
-                    {/* Delete Confirmation Popup */}
-                    {confirmDelete !== null && (
-                        <div class="absolute inset-0 flex justify-center items-center">
-                            <div class="bg-base-100 p-6 rounded-lg text-center shadow-xl">
-                                <p class="text-lg mb-4">
-                                    Are you sure you want to delete this
-                                    character?
-                                </p>
-                                <div class="flex justify-center gap-2">
-                                    <button
-                                        onClick={() =>
-                                            deleteCharacter(confirmDelete)
-                                        }
-                                        class="btn btn-primary"
-                                    >
-                                        Yes, Delete
-                                    </button>
-                                    <button
-                                        onClick={() => setConfirmDelete(null)}
-                                        class="btn btn-soft"
-                                    >
-                                        Cancel
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    )}
-                </>
-            ) : (
-                <div class="flex flex-col px-4">
-                    <p class="text-center">No characters created yet.</p>
-                    <button
-                        class="btn btn-primary mt-4"
-                        onClick={() =>
-                            (window.location.href = 'character-creator')
-                        }
-                    >
-                        Create Character
-                    </button>
-                    <label for="file-upload" class="btn btn-primary mt-4">
-                      Upload Character JSON file
-                    </label>
-                    <input
-                      type="file"
-                      id="file-upload"
-                      accept="application/json"
-                      onChange={importCharacters}
-                      style={{ display: 'none' }}
-                    />
                 </div>
-
             )}
+            <div class="flex flex-col gap-4 px-4 mt-4">
+                <a
+                    role="button"
+                    class="btn btn-primary"
+                    href="/home/character-creator"
+                >
+                    Create Character
+                </a>
+                <label htmlFor="file-upload" class="btn btn-primary">
+                    Import Character JSON File
+                </label>
+                <input
+                    type="file"
+                    id="file-upload"
+                    accept="application/json"
+                    onChange={importCharacters}
+                    style={{ display: 'none' }}
+                />
+                {characters.length > 0 && (
+                    <button class="btn btn-outline" onClick={exportCharacters}>
+                        Export Characters JSON File
+                    </button>
+                )}
+            </div>
         </div>
     );
 };
