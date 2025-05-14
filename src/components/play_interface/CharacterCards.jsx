@@ -260,7 +260,7 @@ const CharacterCards = () => {
                     style={{ display: 'none' }}
                 />
                 {characters.length > 0 && (
-                    <button class="btn btn-soft" onClick={exportCharacters}>
+                    <button class="btn btn-outline" onClick={exportCharacters}>
                         Export Characters JSON File
                     </button>
                 )}
