@@ -153,16 +153,21 @@ const CharacterForm = () => {
     };
 
     const exportToPDF = () => {
-        const doc = new jsPDF();
-        doc.text(`Character Sheet:`, 20, 20);
-        doc.text(`Species: ${character.species}`, 20, 30);
-        doc.text(`Class: ${character.class}`, 20, 40);
-        doc.text(`Background: ${character.background}`, 20, 50);
+        const doc = new jsPDF({
+            orientation: "landscape",
+            unit: "in",
+            format: [8.5, 11]
+          });
+        doc.addImage(`${character.class_image}`, 2.125, 0, 6.375, 3);
+        // doc.text(`Name: ${character.name}`, 2, 4); (ADD 1 TO EVERY OTHER ATTRIBUTE AFTER)
+        doc.text(`Species: ${character.species}`, 2.5, 4);
+        doc.text(`Class: ${character.class}`, 2.5, 5);
+        doc.text(`Background: ${character.background}`, 2.5, 6);
         doc.text(
             `Stats: Strength: ${character.stats.Strength}, Intelligence: ${character.stats.Intelligence}, Wisdom: ${character.stats.Wisdom},
       Dexterity: ${character.stats.Dexterity}, Constitution: ${character.stats.Constitution}, Charisma: ${character.stats.Charisma}`,
-            20,
-            60
+            2.5,
+            7
         );
         doc.save('character.pdf');
     };
