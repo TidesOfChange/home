@@ -74,3 +74,26 @@ html {
 .logo {
     font-family: 'Cinzel Decorative', system-ui;
 }
+
+.progress {
+    height: 1.5em;
+    width: 100%;
+    background-color: var(--color-base-300);
+    position: relative;
+}
+
+.progress:before {
+    content: attr(data-label);
+    font-size: 0.875rem;
+    position: absolute;
+    text-align: center;
+    top: 2px;
+    left: 0;
+    right: 0;
+}
+
+.progress .value {
+    background-color: oklch(75% 0.2 140);
+    display: inline-block;
+    height: 100%;
+}
