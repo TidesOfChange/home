@@ -139,7 +139,7 @@ const Journal = () => {
                 {/* Delete Confirmation Popup */}
                 {confirmDelete !== null && (
                     <div
-                        className="absolute flex items-center justify-center inset-0"
+                        className="fixed flex items-center justify-center inset-0"
                         style={{ backgroundColor: 'rgba(0, 0, 0, 0.25)' }}
                     >
                         <div className="bg-base-100 p-6 rounded-lg text-center shadow-lg">
