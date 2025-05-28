@@ -1,76 +1,68 @@
-const backgroundOptions = [
-    {
-        name: 'Scavenger',
-        image: '/home/images/karkorte/kraken.png',
-        description: 'Survival expert and resourceful.',
-    },
-    {
-        name: 'Hunter',
-        image: '/home/images/karkorte/kraken.png',
-        description: 'Sharp-eyed and precise with a bow.',
-    },
-    {
-        name: 'Ranger',
-        image: '/home/images/karkorte/kraken.png',
-        description: 'Protector of the wilds.',
-    },
-    {
-        name: 'Enchanter',
-        image: '/home/images/karkorte/kraken.png',
-        description: 'Survival expert and resourceful.',
-    },
-    {
-        name: 'Ecotechnicians',
-        image: '/home/images/karkorte/kraken.png',
-        description: 'Sharp-eyed and precise with a bow.',
-    },
-    {
-        name: 'Public Servants',
-        image: '/home/images/karkorte/kraken.png',
-        description: 'Protector of the wilds.',
-    },
-    {
-        name: 'Cloudrunners',
-        image: '/home/images/archipelago/cloudrunner.jpg',
-        description: 'Survival expert and resourceful.',
-    },
-    {
-        name: 'Skycallers',
-        image: '/home/images/archipelago/skycaller.png',
-        description: 'Sharp-eyed and precise with a bow.',
-    },
-    {
-        name: 'Farmers',
-        image: '/home/images/karkorte/kraken.png',
-        description: 'Protector of the wilds.',
-    },
-    {
-        name: 'Seed Keepers',
-        image: '/home/images/karkorte/kraken.png',
-        description: 'Protector of the wilds.',
-    },
-];
+import { backgrounds } from '../../data/backgrounds';
 
 const BackgroundList = ({ character, handleSelection }) => {
+    const assignSkills = (skills) => {
+        const skillsObj = skills
+            .split(',')
+            .map((skill) => skill.trim())
+            .reduce((acc, skill) => {
+                acc[skill] = 0;
+                return acc;
+            }, {});
+        return skillsObj;
+    };
+
     return (
-        <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">Select a Background</h2>
-            <div className="grid grid-cols-2 gap-4">
-                {backgroundOptions.map((option) => (
+        <div className="grid grid-cols-1 gap-4">
+            <h2 className="text-2xl font-bold">Determine Your Background</h2>
+            <p>
+                Every character has a background, which determines their
+                history, attributes, and general skills. Each background
+                provides your character with five basic skills and one unique
+                skill exclusive to the background.
+            </p>
+            <div className="grid grid-cols-1 gap-4">
+                {backgrounds.map((option) => (
                     <div
                         key={option.name}
-                        className={`card card-border border-2 bg-base-100 w-96 shadow-sm cursor-pointer hover:border-base-300 ${
-                            character.background === option.name
-                                ? 'border-base-300'
+                        tabIndex="0"
+                        className={`collapse collapse-arrow border-base-300 border-2 bg-base-100 shadow-sm cursor-pointer hover:border-base-300 ${
+                            character.background.name === option.name
+                                ? 'border-primary hover:border-primary'
                                 : 'border-transparent'
                         }`}
                         onClick={() => {
-                            handleSelection('background', option.name);
+                            handleSelection('background', option);
+                            handleSelection(
+                                'backgroundSkills',
+                                assignSkills(option.coreSkills)
+                            );
                         }}
                     >
-                        <div className="card-body">
+                        <div className="collapse-title">
                             <strong>{option.name}</strong>
-                            <small>{option.description}</small>
+                            <p>{option.description}</p>
+                        </div>
+                        <div className="collapse-content text-sm">
+                            <div className="divider mt-0 mb-4" />
+                            <div className="grid grid-cols-1 gap-2">
+                                <p>
+                                    <strong>Core Skills:</strong>{' '}
+                                    {option.coreSkills}
+                                </p>
+                                <p>
+                                    <strong>Unique Skill:</strong>{' '}
+                                    {option.uniqueSkill}
+                                </p>
+                                <p>
+                                    <strong>Unique Expertise:</strong>{' '}
+                                    {option.uniqueExpertise}
+                                </p>
+                                <p>
+                                    <strong>Equipment:</strong>{' '}
+                                    {option.equipment}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 ))}
