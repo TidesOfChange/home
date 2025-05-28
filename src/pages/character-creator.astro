@@ -1,26 +1,11 @@
 ---
-const title = "Character Creation";
-import CharacterForm from "../components/CharacterForm.jsx";
+const title = "Character Creator";
+import CharacterForm from "../components/character-creator/CharacterForm.jsx";
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout>
-  <section class="min-h-screen flex flex-col items-center justify-center bg-base-200">
-    
-    <h1 class="text-4xl font-bold mb-4">{title}</h1>
-
-    <p class="text-center max-w-2xl mb-6">
-      Welcome to the <strong>Character Creation</strong> process! Follow the steps below to build your character. 
-      You can skip steps or go back at any time.
-    </p>
-
-    <!-- Step Progress -->
-    <div class="justify-center space-x-4 text-lg font-semibold mb-6">
-      <span class="rounded">1. Species</span> →
-      <span class="rounded">2. Class</span> →
-      <span class="rounded">3. Background</span> →
-      <span class="rounded">4. Stats</span> →
-      <span class="rounded">5. Finalize</span>
-    </div>
+  <section class="min-h-screen flex flex-col items-center bg-base-200">
+    <h1 class="text-3xl lg:text-4xl font-bold mb-4 mt-10 px-4 text-center">{title}</h1>
     <CharacterForm client:load />
   </section>
 </BaseLayout>
