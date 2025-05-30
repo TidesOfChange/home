@@ -1,0 +1,29 @@
+---
+import { Picture } from 'astro:assets';
+import ranger from '../../images/quick-start/ranger.webp';
+---
+
+<div class="hero bg-base-200">
+  <div class="hero-content flex-col-reverse lg:flex-row-reverse">
+    <Picture src={ranger} formats={['webp']} alt="An Ecotopian Ranger" class="sm:max-w-lg mt-4 lg:mt-0"/>
+    <div class="sm:px-10 lg:px-0">
+      <div class="grid gap-4 xl:text-lg">
+        <h2 class="text-2xl sm:text-3xl xl:text-4xl font-bold">Choose a Species</h2>
+        <p>
+          Each species is relatively humanoid and intelligent, though intelligence as well as physical characteristics vary by species. The species you choose contributes a lot to the identity of your character. 
+          It provides the general appearance and natural abilities of your characters but also provides a background for what they experienced prior to the campaign. 
+        </p>
+        <p>
+          Each species has traits that it is adapted to providing it with an increase in an attribute(such as strength or agility), core skills(such as swimming or foraging), a unique ability no other species has, and a unique weakness that no other species has.
+        </p>
+        <h2 class="text-2xl sm:text-3xl xl:text-4xl font-bold mt-4">Choose a Background</h2>
+        <p>
+          Every character has a background, which determines their past, general skills, and attributes. Each background provides your character with 5 basic skills related to that background and a unique skill exclusive to that background. 
+        </p>
+        <p>
+          Keep in mind that certain backgrounds are tied to specific territories, for example, it might not make sense for your character to be a Seed Keeper when they are from Karkorte, a territory wholly underwater and very distant from the Seed Vault.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GettingStarted from '../components/quick-start/GettingStarted.astro'
+import SpeciesBackgrounds from '../components/quick-start/SpeciesBackgrounds.astro'
+import AttributesSkills from '../components/quick-start/AttributesSkills.astro'
+import FinishingTouches from '../components/quick-start/FinishingTouches.astro'
+import QuickLinks from '../components/quick-start/QuickLinks.astro'
+---
+
+<BaseLayout>
+  <section class="min-h-screen flex flex-col items-center bg-base-200">
+    <GettingStarted />
+    <SpeciesBackgrounds />
+    <AttributesSkills />
+    <FinishingTouches />
+    <QuickLinks />
+  </section>
+</BaseLayout>

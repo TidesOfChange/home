@@ -1,0 +1,26 @@
+---
+import { Picture } from 'astro:assets';
+import avenari from '../../images/quick-start/avenari.webp';
+---
+
+<div class="hero bg-base-200">
+  <div class="hero-content flex-col-reverse lg:flex-row-reverse lg:items-start">
+    <Picture src={avenari} formats={['webp']} alt="A Peacock Avenari" class="sm:max-w-lg mt-4 lg:mt-0"/>
+    <div class="sm:px-10 lg:px-0 grid gap-4 xl:text-lg">
+      <h2 class="text-2xl sm:text-3xl xl:text-4xl font-bold">Finishing Touches</h2>
+      <p>
+        Once all the numerical parts are done, it is time to flesh out your character.
+      </p>
+      <p>
+        Describe how they look, how they act, their personality and motivations!
+      </p>
+      <p>
+        Define their goals: What drives them forward? What do they hope to achieve? You might also want to outline their fears, quirks, or key relationships that shape who they are.
+      </p>
+      <p>
+        These details will not only help you role-play more immersively, but also give your GM valuable insight into how your character fits into the world and the adventure ahead.
+      </p>
+      <p>Once you've finished these touches, you're ready to step into the world of Tides of Change and start your journey!</p>
+    </div>
+  </div>
+</div>

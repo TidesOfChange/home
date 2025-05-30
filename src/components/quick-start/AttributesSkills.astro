@@ -1,0 +1,28 @@
+---
+import { Picture } from 'astro:assets';
+import bulkav from '../../images/quick-start/bulkav.webp';
+---
+
+<div class="hero bg-base-200 mt-4">
+  <div class="hero-content flex-col-reverse lg:flex-row">
+    <Picture src={bulkav} formats={['webp']} alt="A Bulkav Ecotechnician" class="sm:max-w-lg mt-4 lg:mt-0"/>
+    <div class="sm:px-10 lg:px-0">
+      <div class="grid gap-4">
+        <h2 class="text-2xl sm:text-3xl xl:text-4xl font-bold">Determine Attributes</h2>
+        <p class="xl:text-lg">
+          Much of what your character does and how they interact with the environment around them is determined by their attributes, there are six: Knowledge, Intuition, Strength, Agility, Personality, Health. 
+        </p>
+        <p class="xl:text-lg">
+          Each attribute can be of rank 0-5, starting at 0 when you first create your character. Distribute 12 points among these attributes as you wish. Keep in mind that ranks 1-3 cost 1 point and rank 4 costs 2 points. Rank 5 is not available at character creation.
+        </p>
+        <h2 class="text-2xl sm:text-3xl xl:text-4xl font-bold mt-4">Skills and Equipment</h2>
+        <p class="xl:text-lg">
+          Your chosen species and background each provide you with a set of five skills that your character is proficient in. You can allocate 10 points to your species skill set and 10 points to your background skill set respectively. Each skill can be rank 0-5, starting at rank 0. Ranks 1-3 cost 1 point respectively and rank 4 costs 2 points. Rank 5 is not available at character creation. 
+        </p>
+        <p class="xl:text-lg">
+          If your skills overlap to a great extent you can ask your GM if you can take extra skills of your choice, at the GM's discretion. If there is minimal overlap, then you can still distribute the full 20 points(10 for each skill set).
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
