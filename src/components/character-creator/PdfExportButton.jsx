@@ -18,14 +18,16 @@ const PdfExportButton = ({character}) => {
         doc.setFontSize(11);
         doc.setFont("Cinzel-Regular", "bold");
         doc.text(`Player name: `, 1, 1.5);
-        doc.text(`Character Name: `, 5, 1.5);
-        doc.text(`Species: `, 1, 2);
-        doc.text(`Background: `, 5, 2);
+        doc.text(`Character Name: ${character.name}`, 5, 1.5);
+        doc.text(`Species: ${character.species.name}`, 1, 2);
+        doc.text(`Background: ${character.background.name}`, 5, 2);
         doc.text(`Total XP: `, 1, 2.5);
         doc.text(`Current XP: `, 3, 2.5);
         doc.text(`HT: `, 5, 2.5);
         doc.text(`Current Harm: `, 6, 2.5);
-        doc.text(`Background, Personality, Description:`, 1, 3);
+        doc.text(`Background, Personality, Description: ${character.description}`, 1, 3, {
+            maxWidth: w - 2
+        });
 
         // First Column of Attributes
         doc.text('Attributes', 1, 4.5);
