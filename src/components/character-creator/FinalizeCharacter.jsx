@@ -68,6 +68,7 @@ const FinalizeCharacter = ({ character, handleInputChange }) => {
                         <textarea
                             className="textarea h-24 w-full"
                             placeholder="Write your description here."
+                            maxLength="561"
                             onChange={(e) =>
                                 handleInputChange('description', e.target.value)
                             }
