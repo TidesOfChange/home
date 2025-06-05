@@ -1,18 +1,7 @@
 export const species = [
     {
-        name: 'Atlantean',
-        image: '/home/images/species/placeholder.webp',
-        description:
-            'Highly intelligent and creative, Atlanteans founded an energy-powered ecotopia in the ocean’s core. Their advanced technology and Lux mastery fuel rapid progress, but their self-centered nature and tech reliance strain relations with others and can weaken their standing.',
-        specialAbility:
-            'Atlanteans have access to frontier technology and thus begin the game with 1 extra piece of equipment. Due to their abilities, they are able to further advance their technology and improve the quality of life in Atlantis. That is, until the supply of Lux runs out.',
-        specialWeakness:
-            'Due to the pollution leading to the creation of Atlantis and the continued exploitation of Aqualumeans to power their ecotopia, Atlanteans are mistrusted, which carries a -1 penalty on social checks with non-human characters.',
-        skills: 'Mechanics, Vehicles, Deception, Cybernetics, Bartering',
-    },
-    {
         name: 'Aqualumean',
-        image: '/home/images/species/placeholder.webp',
+        image: '/home/images/species/aqualumean.webp',
         description:
             'Strong, agile humanoids with mermaid tails and gills, Aqualumeans have the ability to breathe underwater and navigate reefs and ocean currents with remarkable speed and grace. Their natural adaptations make them powerful swimmers and formidable figures beneath the waves.',
         specialAbility:
@@ -20,6 +9,17 @@ export const species = [
         specialWeakness:
             'Aqualumeans are water creatures and cannot breathe on land. When they have to move on land, Aqualumeans need a special suit that covers and protects their gills and allows them to hover over the ground (protects their tail).',
         skills: 'Foraging, Sneakiness, Swimming, Awareness, Medicine',
+    },
+    {
+        name: 'Atlantean',
+        image: '/home/images/species/atlantean.webp',
+        description:
+            'Highly intelligent and creative, Atlanteans founded an energy-powered ecotopia in the ocean’s core. Their advanced technology and Lux mastery fuel rapid progress, but their self-centered nature and tech reliance strain relations with others and can weaken their standing.',
+        specialAbility:
+            'Atlanteans have access to frontier technology and thus begin the game with 1 extra piece of equipment. Due to their abilities, they are able to further advance their technology and improve the quality of life in Atlantis. That is, until the supply of Lux runs out.',
+        specialWeakness:
+            'Due to the pollution leading to the creation of Atlantis and the continued exploitation of Aqualumeans to power their ecotopia, Atlanteans are mistrusted, which carries a -1 penalty on social checks with non-human characters.',
+        skills: 'Mechanics, Vehicles, Deception, Cybernetics, Bartering',
     },
     {
         name: 'Avenari',
