@@ -1,26 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import GameDetails from '../components/about/GameDetails.astro'
+import QuickLinks from '../components/about/QuickLinks.astro';
 ---
 
 <BaseLayout>
   <section class="min-h-screen flex flex-col items-center bg-base-200">
-    <div class="hero bg-base-200">
-      <div class="hero-content flex-col max-w-6xl mb-4 text-center">
-          <h1 class="text-3xl lg:text-5xl font-bold mt-10 px-4 text-center">About The Game</h1>
+    <h1 class="text-3xl lg:text-5xl font-bold mt-14 px-4">About The Game</h1>
+    <div class="hero-content flex-col-reverse lg:flex-row-reverse">
+      <div class="sm:px-10 lg:px-0">
+        <div class="grid gap-4 xl:text-lg">
           <p>
-            <strong>Tides of Change</strong> was born from the collaborative efforts of students in Synthesis 100 (Engaging with a Changing Planet), 
-            a course at the University of California, San Diego that explores themes, challenges, and questions surrounding the climate crisis.
-            From Fall 2024 to Spring 2025, over 90 students worked together to develop the game into an interactive and immersive experience rooted in the consequences of climate catastrophe 
-            and how civilization survives, adapts, or overcomes in the face of profound environmental change.
+            It is many years into Earth's future. 10,000 AD to be exact. 
+            Rising sea levels have submerged much of the planet, and the few remaining land masses suffer from pollution and diminishing resources. 
+            Only a few continents remain, with Antarctica, South America, Australia, and Asia completely submerged and evolved into coral reefs. 
           </p>
-          <p>
-            Tides of Change invites players to explore through an environmental lens, with deep and immersive environments like the sunken village of Karkorte or the storm-ridden islands of the Aeolian Archipelago, 
-            unique character backgrounds such as Seed Keepers, Cloudrunners, and Ecotechnicians, and lore rich campaign quests that challenge players to navigate political intrigue, resource scarcity, and the fight for ecological balance.
-          </p>
-          <p>
-            The final game is made publicly available so that players everywhere can join this journey and use collaborative storytelling as a form of climate communication and exploration.
-          </p>
+        </div>
       </div>
     </div>
+
+    <GameDetails />
+    <QuickLinks />
   </section>
 </BaseLayout>
