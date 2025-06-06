@@ -84,7 +84,7 @@ export const backgrounds = [
         coreSkills: 'Force, Foraging, Cybernetics, Mechanics, Awareness',
         uniqueSkill: 'Environmentalism',
         uniqueExpertise: 'Eco-Mage',
-        equipment: 'None', // TODO: Add when available
+        equipment: 'Magi-tech 1.0',
     },
     {
         name: 'Public Servant',
@@ -104,7 +104,7 @@ export const backgrounds = [
         coreSkills: 'Awareness, Insight, Tracking, Deduction, Force',
         uniqueSkill:
             'Acclimatization (ability to adapt to any situation, assimilate into cultures, learn new things)',
-        uniqueExpertise: 'None', // TODO: Add when available
+        uniqueExpertise: 'Alert',
         equipment:
             'Night Vision Goggles, Pocket Knife (multi-tool), Sonar Mapper',
     },
@@ -145,7 +145,7 @@ export const backgrounds = [
         coreSkills: 'Affinity, Deduction, Medicine, Awareness, Charm',
         uniqueSkill:
             'Premonition (ability to sense future events or shifts in energy)',
-        uniqueExpertise: 'None', // TODO: Add when available
+        uniqueExpertise: 'Amateur Attacker',
         equipment:
             'Defender’s Ring (stores one defensive level-1 spell, castable once per day), Long Bamboo Staff, Enchanter’s Gloves (adds 1 extra Magic Point when worn)',
     },

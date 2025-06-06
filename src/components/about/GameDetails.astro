@@ -1,0 +1,50 @@
+---
+import { Picture } from 'astro:assets';
+import scavenger from '../../images/about/scavenger.webp';
+import seventh from  '../../images/about/seventh-logo.webp';
+---
+
+<div class="hero bg-base-200">
+    <div class="hero-content flex-col-reverse lg:flex-row-reverse lg:place-items-start">
+        <Picture src={scavenger} formats={['webp']} alt="A Kraken Scavenger" class="max-w-sm mt-4 lg:mt-0"/>
+        <div class="sm:px-10 lg:px-0 lg:pr-4">
+            <div class="grid gap-4 xl:text-lg">
+                <p>
+                    As the planet rapidly changed over the past millennia, so too did its inhabitants. Humans, as we think of them today, have become a minority on the planet they once dominated. 
+                    In their stead, myriad new species have evolved to adapt to this ever changing environment. 
+                    Survival is the name of the game for most civilizations, each experiencing unique challenges (as well as unique joys!). 
+                </p>
+                <p>
+                    Can these civilizations learn to start working with each other towards a world that allows for more than just day-to-day survival? 
+                    Can they ride the tides of change into a better future, or will they drown? 
+                </p>
+                <p>
+                    <strong>Tides of Change</strong> is set in a world where rising temperatures and sea levels have dramatically reshaped the planet, and all provided lore reflects this transformed climate. 
+                    The game works best in settings that follow this premise, encouraging players to imagine a civilization that has adapted to or found ways to overcome the long-term consequences of climate change. 
+                </p>
+            </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero bg-base-200 mt-4">
+    <div class="hero-content flex-col-reverse lg:flex-row">
+      <Picture src={seventh} formats={['webp']} alt="A Bulkav Ecotechnician" class="max-w-md mt-4 lg:mt-0"/>
+      <div class="sm:px-10 lg:px-0 lg:pl-4">
+        <div class="grid gap-4 xl:text-lg">
+            <p>
+                Tides of Change was born from the collaborative efforts of students in Synthesis 100 - Engaging with a Changing Planet, 
+                a course at the University of California, San Diego that explores themes, challenges, and questions surrounding the climate crisis.
+                From Fall 2024 to Spring 2025, over 90 students worked together to develop the game into an interactive and immersive experience rooted in the consequences of climate catastrophe 
+                and how civilization survives, adapts, or overcomes in the face of profound environmental change.
+            </p>
+            <p>
+                Tides of Change invites players to experience it's story through an environmental lens, with deep and immersive environments like the sunken village of Karkorte or the storm-ridden islands of the Aeolian Archipelago, 
+                unique character backgrounds such as Seed Keepers, Cloudrunners, and Ecotechnicians, and lore rich campaign quests that challenge players to navigate political intrigue, resource scarcity, and the fight for ecological balance.
+            </p>
+            <p>
+                The final game is made publicly available so that players everywhere can join this journey and use collaborative storytelling as a form of climate communication and exploration.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>

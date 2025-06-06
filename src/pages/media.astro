@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from '../layouts/BaseLayout.astro';
+const images = await Astro.glob('../images/gallery/*');
+---
+
+<BaseLayout>
+  <section class="min-h-screen flex flex-col items-center bg-base-200">
+    <div class="hero bg-base-200">
+      <div class="hero-content flex-col">
+        <h1 class="text-3xl lg:text-5xl font-bold mt-10 px-4 text-center">Media Showcase</h1>
+      </div>
+    </div>
+    <p class="max-w-5xl text-center px-4">
+      Immerse yourself in the world of Tides of Change through original artwork created by students. From vivid character designs to atmospheric landscapes, this gallery showcases the creativity and imagination that bring the world to life.
+    </p>
+    <div class="container my-8 px-4 sm:columns-2 md:columns-3 lg:columns-4">
+      {
+        images.map((image) => (
+          <Image
+            src={image.default}
+            alt={`Tides of Change art`}
+            class="rounded-lg bg-base-100 mb-4 border border-transparent hover:border-base-300 shadow-sm hover:shadow-md"
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
